@@ -1,0 +1,19 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "Alice Walsh, PhD",
+      "author": [],
+      "contents": "\nI am a computational biologist/data scientist/bioinformatician/bioengineer that enjoys learning from complex biological data sets and collaborating.\nI am currently VP of Translational Research at Pathos. My prior professional experience includes roles at Bristol Myers Squibb and Janssen. My projects are broadly at the intersection of molecular data and drug development, including leading teams that have worked on all stages of drug development, from target identification through approval. Google Scholar page.\nI am also a founding organizer of the Philadelphia chapter of R-Ladies.\nI live in the Philadelphia area. I spend my free time watching television and improving my artistic skills through painting, quilting, needlepoint, and other fiber arts.\nYou can find me online on Twitter, LinkedIn, and GitHub.\n\n\n\n",
+      "last_modified": "2022-03-13T13:30:46-04:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Alice Walsh, PhD",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-03-13T13:30:46-04:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

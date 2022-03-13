@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to the test site",
+    "description": "This is a test post.",
+    "author": [
+      {
+        "name": "Alice",
+        "url": {}
+      }
+    ],
+    "date": "2022-03-13",
+    "categories": [],
+    "contents": "\nThis is a test post. Not much to see here.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-03-13T13:17:52-04:00",
+    "input_file": {}
+  }
+]
