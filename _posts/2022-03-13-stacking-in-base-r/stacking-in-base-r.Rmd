@@ -1,0 +1,106 @@
+---
+title: "Stacking vectors"
+description: |
+  Don't forget to use stack().
+author:
+  - name: Alice
+    url: {}
+date: 2022-03-13
+output:
+  distill::distill_article:
+    self_contained: false
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Intro
+I have recently found a couple of great use cases for the 
+`stack()` function from `{utils}`.
+
+Because I want to remind my future self about this, I thought it would make a good short post to test this `{distill}` site that I just created!
+
+# Documentation
+
+From the stack() function documentation:
+
+> "Stacking vectors concatenates multiple vectors into a 
+> single vector along with a factor indicating where each > observation originated. Unstacking reverses this 
+> operation."
+
+# An example
+
+Sometimes, I get a bunch of vectors. Maybe I had multiple files or outputs with various items in them that correspond to different groups. Often, I need to combine these and then check how many of the items exist across multiple groups.
+
+For the purpose of illustration, here I will pretend that I read into R a set of gene names as a named list.
+
+```{r}
+my_list <- list(test1 = c("KRAS","EGFR","ERBB2"),
+                test2 = c("ERBB2","ERBB3","SPRY2","AR"),
+                test3 = c("APC","BRAF"))
+```
+
+`stack()` makes a nice tidy data.frame! (*Note that this would also work if the input was a nested list of lists.*)
+
+```{r}
+stack(my_list)
+```
+
+If you `table()` the result from `stack()`, now you have a nice matrix of the values in each group.
+
+```{r}
+table(stack(my_list))
+```
+
+The resulting object is a table. You can convert it to a data.frame.
+
+```{r}
+as.data.frame.array(table(stack(my_list)))
+```
+
+You can also convert the binary matrix to logical (TRUE/FALSE).
+
+```{r}
+table(stack(my_list)) > 0
+```
+
+Now, imagine a case where you have the table and some values are greater than 1 (because they appeared in a list more than once). You can use a trick to convert to logical and back to numeric 0/1.
+
+```{r}
+my_list_w_repeats <- list(
+  test1 = c("KRAS","EGFR","ERBB2"),
+  test2 = c("ERBB2","ERBB3","SPRY2","AR"),
+  test3 = c("APC","APC","APC","BRAF")) # APC is here 3 times
+
+table(stack(my_list_w_repeats))
+
++(table(stack(my_list_w_repeats)) > 0)
+```
+
+# Summary
+I forget about this function every once in a while and it is really useful. I also have a [gist](https://gist.github.com/awalsh17/211c9fde41b0d2411a1d5fb61fd78e40) about this.
+
+For fun, here is one way to do this with {dplyr} and {tidyr}. I would like to hear about other ways because I don't find this as intuitive.
+
+```{r}
+library(dplyr, quietly = TRUE)
+
+lapply(my_list, function(x) data.frame(genes = x)) %>% 
+  bind_rows(.id = "names")
+```
+
+Now to make the binary matrix.
+
+```{r}
+lapply(my_list, function(x) data.frame(genes = x)) %>% 
+  bind_rows(.id = "names") %>%
+  count(names, genes) %>%
+  tidyr::pivot_wider(names_from = "names",
+                     values_from = "n",
+                     values_fill = 0)
+```
+
