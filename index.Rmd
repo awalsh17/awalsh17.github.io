@@ -1,5 +1,10 @@
 ---
 title: "Alice Walsh, PhD"
 site: distill::distill_website
-listing: posts
 ---
+
+
+
+Welcome! <span class="wave">👋</span> 
+
+This is a work-in-progress personal site.

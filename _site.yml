@@ -1,7 +1,7 @@
-name: "personalsite_distill"
+name: "awalsh17.github.io"
 title: "Alice Walsh"
 description: |
-  Alice Walsh
+  Alice Walsh's personal website
 output_dir: "docs"
 navbar:
   right:
@@ -9,4 +9,12 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Posts"
+      href: posts.html
+    - icon: fa fa-github
+      href: https://github.com/awalsh17
+    - icon: fa fa-linkedin
+      href: https://www.linkedin.com/in/alice-walsh/
+    - icon: fa fa-twitter
+      href: https://twitter.com/sciencealice
 output: distill::distill_article
