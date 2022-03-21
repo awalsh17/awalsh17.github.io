@@ -1,0 +1,193 @@
+---
+title: "Testing many models with grouped data"
+description: |
+  Another example of something I do a lot and forget how to do.
+author:
+  - name: Alice
+    url: {}
+date: 2022-03-20
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+set.seed(202203)
+```
+
+# Many models!
+
+I often have a situation where I am testing many hypotheses.
+
+How I tested many models in R in the past was to use `lapply` or a loop. 
+I don't think there is any problem with that approach, 
+I just really like using a pattern these days with grouped data using tidyverse packages.
+
+__The general pattern is__
+
+1. Make the data long (if not already long)
+2. Group and nest
+3. Mutate to calculate your statistics
+4. Un-nest, filter, or select to get your desired output
+
+</br>
+There is a great [vignette](https://cran.r-project.org/web/packages/broom/vignettes/broom_and_dplyr.html) on this topic from the {broom} package.
+
+<aside>
+Another day, I will add a post on operations on pairwise combinations of 
+variables ala the [{corrr} package](https://corrr.tidymodels.org).
+</aside>
+
+First, load some packages.
+
+```{r}
+library(tidyr, quietly = TRUE) # manipulating data and nesting
+library(dplyr, quietly = TRUE) # general data and piping
+library(purrr, quietly = TRUE) # i will use purrr::map
+library(broom)                 # very good at reformatting model objects
+library(palmerpenguins)        # for more fun data
+library(survival)              # for time to event models
+library(ggplot2)               # to make our plots
+theme_set(theme_minimal(base_family = "Avenir")) # for plot appearance
+```
+
+## An example: penguin linear models
+
+Let's say we are interested in the association between all the numeric variables
+in the {palmerpenguins} penguin dataset and the species. 
+
+If you are not familiar with this dataset, the three penguin species have different features like bill depth, bill length, body mass, and flipper length.
+
+```{r}
+head(penguins, 4)
+```
+
+Here, we can see that Gentoo are some big penguins and that Adelie has shorter
+bill length.
+
+```{r code_folding=TRUE}
+penguins %>% 
+  pivot_longer(cols = where(is.numeric)) %>% 
+  mutate(name = stringr::str_replace_all(name, "_", " "),
+         name = stringr::str_wrap(name, width = 10)) %>%
+  ggplot(aes(x = species, y = value, fill = species)) + 
+  geom_boxplot() + 
+  scale_fill_manual(values = c("#0E89BA","#85BAA1","#C16E70")) +
+  facet_wrap(~name, scales = "free", nrow = 1) + 
+  labs(title = "The penguin species are different",
+       x = NULL) +
+  theme(
+    legend.position = "none",
+    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)
+  )
+```
+
+As a reminder, I will follow the same general pattern above
+
+1. Make the data long - *pivot all the numeric variables* 
+2. Group and nest - *group by the variable name*
+3. Mutate to calculate your statistics - *variable ~ species*
+4. Un-nest, filter, or select to get your desired output 
+
+</br>
+Below, I calculated p-values and R-squared values using
+
+1. `stats::lm()`
+1. `stats::anova()`
+1. `broom::tidy()`
+
+<aside>
+Note that you could also use `broom::glance()` to get R-squared
+</aside>
+
+```{r}
+penguins %>% 
+  # tidyr functions to select all the numeric columns and 
+  # create a `name` and `value` column
+  pivot_longer(cols = where(is.numeric)) %>% 
+  group_by(name) %>% 
+  # tidyr::nest to create a data frame where each level of the 
+  # grouped variable has a single row, and all the other
+  # rows and columns are now in a single nested column, `data`
+  nest() %>% 
+  # use purrr::map to create new nested columns with the objects
+  # returned from `lm`, `anova`, `broom::tidy`
+  mutate(lm_fit = map(data, 
+                      ~ lm(value ~ species, data = .x)),
+         r2 = map_dbl(lm_fit, ~summary(.x)$r.squared),
+         anova = map(lm_fit, anova),
+         tidied = map(anova, tidy)) %>% 
+  unnest(tidied) %>%
+  # this filter removes the rows with "Residuals"
+  filter(term == "species") %>%
+  select(-data, -lm_fit, -anova) %>% 
+  knitr::kable(digits = 3)
+```
+
+We could also do this with `group_modify` in dplyr.
+
+From the documentation:
+
+> group_map(), group_modify() and group_walk() are purrr-style functions
+> that can be used to iterate on grouped tibbles.
+
+```{r}
+penguins %>% 
+  pivot_longer(cols = where(is.numeric)) %>% 
+  group_by(name) %>% 
+  # there is a litle extra work here to return r.squared
+  # group_modify needs the returned value to be a data.frame!
+  # so you need to create one
+  group_modify( ~tidy(anova(lm(value ~ species, data = .))),
+                ~tibble(summary(lm(value ~ species, data = .))$r.squared,
+                        .name_repair = ~ c("r2")) ) %>%
+  # this filter removes the rows with "Residuals"
+  filter(term == "species") %>%
+  knitr::kable(digits = 3)
+```
+
+## Another example: survival models
+
+I often work with time to event models (survival models). You can also follow this same pattern.
+
+Take for example the `survival::lung` dataset that has some variables
+like age, sex, performance status (ECOG and Karnofsky), etc.
+
+```{r}
+glimpse(lung)
+```
+
+We can repeat the same pattern to test cox proportional hazards
+models for these variables individually in univariate models.
+
+```{r}
+lung %>% 
+  # tidyr to make the data long
+  pivot_longer(cols = -c(status, time)) %>% 
+  group_by(name) %>% 
+  # group the data
+  nest() %>% 
+  # use purrr::map to create new nested columns with the objects
+  mutate(cox_fit = map(data, 
+                      ~ coxph(Surv(time, status) ~ value, data = .x)),
+         tidied = map(cox_fit, tidy, conf.int = TRUE)) %>% 
+  unnest(tidied) %>% 
+  select(-data, -cox_fit) %>% 
+  knitr::kable(digits = 3)
+```
+
+<aside>
+You could easily add a `mutate()` here to calculate p-values adjusted
+for multiple comparisons.
+</aside>
+
+### sessionInfo {.appendix}
+
+```{r}
+pander::pander(sessionInfo())
+```

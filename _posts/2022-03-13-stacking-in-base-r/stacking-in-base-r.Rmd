@@ -29,8 +29,8 @@ Because I want to remind my future self about this, I thought it would make a go
 From the stack() function documentation:
 
 > "Stacking vectors concatenates multiple vectors into a 
-> single vector along with a factor indicating where each > observation originated. Unstacking reverses this 
-> operation."
+> single vector along with a factor indicating where each 
+> observation originated. Unstacking reverses this operation."
 
 # An example
 
@@ -104,3 +104,7 @@ lapply(my_list, function(x) data.frame(genes = x)) %>%
                      values_fill = 0)
 ```
 
+## sessionInfo {.appendix}
+```{r}
+sessionInfo()
+```

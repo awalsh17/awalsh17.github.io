@@ -7,4 +7,4 @@ site: distill::distill_website
 
 Welcome! <span class="wave">👋</span> 
 
-This is a work-in-progress personal site.
+This is my personal site.
