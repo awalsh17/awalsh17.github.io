@@ -3,6 +3,9 @@
 .Rapp.history
 .DS_Store
 
+# drafts
+draft_posts/*
+
 # Session Data files
 .RData
 
