@@ -2482,7 +2482,7 @@ Another day, I will add a post on operations on pairwise combinations of variabl
 4 Adelie  Torgersen           NA            NA                  NA
 # … with 3 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
-<p>Here, we can see that Gentoo are some big penguins and that Adelie has shorter bill length.</p>
+<p>Here, we can see that Gentoo are some big penguins and that Adelie penguins have shorter bill length.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2629,11 +2629,10 @@ Note that you could also use <code>broom::glance()</code> to get R-squared
   <span class='co'># there is a litle extra work here to return r.squared</span>
   <span class='co'># group_modify needs the returned value to be a data.frame!</span>
   <span class='co'># so you need to create one</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_map.html'>group_modify</a></span><span class='op'>(</span> <span class='op'>~</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/anova.html'>anova</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>value</span> <span class='op'>~</span> <span class='va'>species</span>, data <span class='op'>=</span> <span class='va'>.</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>,
-                <span class='op'>~</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>value</span> <span class='op'>~</span> <span class='va'>species</span>, data <span class='op'>=</span> <span class='va'>.</span><span class='op'>)</span><span class='op'>)</span><span class='op'>$</span><span class='va'>r.squared</span>,
-                        .name_repair <span class='op'>=</span> <span class='op'>~</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"r2"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>)</span> <span class='op'><a href='https://tidyr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
-  <span class='co'># this filter removes the rows with "Residuals"</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>term</span> <span class='op'>==</span> <span class='st'>"species"</span><span class='op'>)</span> <span class='op'><a href='https://tidyr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_map.html'>group_modify</a></span><span class='op'>(</span> <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>value</span> <span class='op'>~</span> <span class='va'>species</span>, data <span class='op'>=</span> <span class='va'>.</span><span class='op'>)</span><span class='op'>)</span><span class='op'>$</span><span class='va'>r.squared</span>,
+                              .name_repair <span class='op'>=</span> <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"r2"</span><span class='op'>)</span><span class='op'>)</span>,
+                       <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/anova.html'>anova</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>value</span> <span class='op'>~</span> <span class='va'>species</span>, data <span class='op'>=</span> <span class='va'>.</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://tidyr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+                         <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>term</span> <span class='op'>==</span> <span class='st'>"species"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://tidyr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2641,6 +2640,7 @@ Note that you could also use <code>broom::glance()</code> to get R-squared
 <thead>
 <tr class="header">
 <th style="text-align: left;">name</th>
+<th style="text-align: right;">r2</th>
 <th style="text-align: left;">term</th>
 <th style="text-align: right;">df</th>
 <th style="text-align: right;">sumsq</th>
@@ -2652,6 +2652,7 @@ Note that you could also use <code>broom::glance()</code> to get R-squared
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">bill_depth_mm</td>
+<td style="text-align: right;">0.680</td>
 <td style="text-align: left;">species</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">9.039670e+02</td>
@@ -2661,6 +2662,7 @@ Note that you could also use <code>broom::glance()</code> to get R-squared
 </tr>
 <tr class="even">
 <td style="text-align: left;">bill_length_mm</td>
+<td style="text-align: right;">0.708</td>
 <td style="text-align: left;">species</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">7.194317e+03</td>
@@ -2670,6 +2672,7 @@ Note that you could also use <code>broom::glance()</code> to get R-squared
 </tr>
 <tr class="odd">
 <td style="text-align: left;">body_mass_g</td>
+<td style="text-align: right;">0.670</td>
 <td style="text-align: left;">species</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">1.468642e+08</td>
@@ -2679,6 +2682,7 @@ Note that you could also use <code>broom::glance()</code> to get R-squared
 </tr>
 <tr class="even">
 <td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: right;">0.778</td>
 <td style="text-align: left;">species</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">5.247328e+04</td>
@@ -2688,6 +2692,7 @@ Note that you could also use <code>broom::glance()</code> to get R-squared
 </tr>
 <tr class="odd">
 <td style="text-align: left;">year</td>
+<td style="text-align: right;">0.003</td>
 <td style="text-align: left;">species</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">6.010000e-01</td>
@@ -2837,6 +2842,7 @@ $ wt.loss   &lt;dbl&gt; NA, 15, 15, 11, 0, 0, 10, 1, 16, 34, 27, 23, 5, 32…</c
 <aside>
 You could easily add a <code>mutate()</code> here to calculate p-values adjusted for multiple comparisons.
 </aside>
+<p><em>Note: edited on 2022-04-08 to fix mistake with group_modify()</em></p>
 <h3 class="appendix" id="sessioninfo">sessionInfo</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">

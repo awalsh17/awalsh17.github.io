@@ -67,8 +67,7 @@ If you are not familiar with this dataset, the three penguin species have differ
 head(penguins, 4)
 ```
 
-Here, we can see that Gentoo are some big penguins and that Adelie has shorter
-bill length.
+Here, we can see that Gentoo are some big penguins and that Adelie penguins have shorter bill length.
 
 ```{r code_folding=TRUE}
 penguins %>% 
@@ -143,11 +142,10 @@ penguins %>%
   # there is a litle extra work here to return r.squared
   # group_modify needs the returned value to be a data.frame!
   # so you need to create one
-  group_modify( ~tidy(anova(lm(value ~ species, data = .))),
-                ~tibble(summary(lm(value ~ species, data = .))$r.squared,
-                        .name_repair = ~ c("r2")) ) %>%
-  # this filter removes the rows with "Residuals"
-  filter(term == "species") %>%
+  group_modify( ~cbind(tibble(summary(lm(value ~ species, data = .))$r.squared,
+                              .name_repair = ~c("r2")),
+                       tidy(anova(lm(value ~ species, data = .))) %>%
+                         filter(term == "species"))) %>%
   knitr::kable(digits = 3)
 ```
 
@@ -185,6 +183,8 @@ lung %>%
 You could easily add a `mutate()` here to calculate p-values adjusted
 for multiple comparisons.
 </aside>
+
+*Note: edited on 2022-04-08 to fix mistake with group_modify()*
 
 ### sessionInfo {.appendix}
 
