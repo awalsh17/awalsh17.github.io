@@ -4,7 +4,8 @@ site: distill::distill_website
 ---
 
 
-
 Welcome! <span class="wave">👋</span> 
 
-This is my personal site.
+I work in drug development, where I am excited about the potential of computational research to yield breakthroughs for patients. This is my personal site where I am experimenting with posting various things that normally stay in my notes app.
+
+[More about me](https://awalsh17.github.io/about.html)

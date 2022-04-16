@@ -76,3 +76,12 @@ d-appendix {
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
 
+/*  https://github.com/rstudio/distill/issues/92 */
+.thumbnail {
+    padding: 0px!important;
+    margin: 0px!important;
+    max-width: 20%!important;
+    height: auto!important;
+    vertical-align: text-top!important;
+}
+

@@ -1,9 +1,13 @@
 ---
-title: "Alice Walsh, PhD"
+title: About me
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, echo = FALSE, fig.align='center', out.width='30%'}
+knitr::include_graphics("images/headshot.png")
 ```
 
 I am a computational biologist/data scientist/bioinformatician/bioengineer that enjoys learning from complex biological data sets and collaborating. (My pronouns are she/her.)
@@ -12,6 +16,6 @@ I am currently VP of Translational Research at [Pathos](https://pathos.com). My 
 
 I am also a founding organizer of the [Philadelphia chapter](https://www.rladiesphilly.org) of [R-Ladies](https://rladies.org). 
 
-I live in the Philadelphia area. I spend my free time watching television and improving my artistic skills through painting, quilting, needlepoint, and other fiber arts.
+I live in the Philadelphia area. I spend my free time watching television and improving my artistic skills through painting, quilting, needlepoint, and other creative pursuits.
 
 You can find me online on [Twitter](https://twitter.com/sciencealice), [LinkedIn](https://www.linkedin.com/in/alice-walsh/), and [GitHub](https://github.com/awalsh17).
