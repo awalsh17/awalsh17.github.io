@@ -1,0 +1,57 @@
+---
+title: "Managing data teams: resources"
+description: |
+  A collection of links and book recommendations.
+author:
+  - name: Alice Walsh
+    url: {}
+date: 2022-05-24
+preview: images/noun-books-3647451.png
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+I wanted to gather some thoughts on managing computational research teams in biopharma (sometimes encompassing bioinformatics, computational biology, and data science). Mostly, I want to keep track of various links and books and grow the list over time.
+
+### Recommendations
+
++ [Resilient Management](https://resilient-management.com/) by Lara Hogan
+  + This book is an excellent overview of how to be a manager written with a first-time manager in mind. However, it contains lots of good reminders for those with management experience.
++ [The Manager's Path](https://www.oreilly.com/library/view/the-managers-path/9781491973882/) by Camille Fournier
+  + Another great book - written for the tech audience.
++ Jacqueline Nolis has a great [blog](https://jnolis.com/blog/) 
+  + There are a set of posts on hiring from 2017, which are very thoughtful.
+  + Dr. Nolis also co-authored [Build a Career in Data Science](https://jnolis.com/book/).
++ The [BICEPS model](https://www.palomamedina.com/biceps) of core needs
+  + This is a valuable framework to apply whenever you or someone you work with reacts strongly to a situation. 
+  + You may have also heard of SCARF, which is more or less the same thing.
++ [Growth Mindset](https://fs.blog/carol-dweck-mindset/) 
+  + "Growth mindset" was a common theme in various trainings I attended in the past. Some people react negatively to this concept, but they also have a closed mindset.
++ Learn about and practice active listening
+  + Maybe it sounds cliché, but listening is a skill that we could all practice more. I can struggle as an extrovert to be quiet and listen.
+  + I would love to find some good resources on this (books, videos, etc.). I have read a few ebooks to try to find a recommendation, but this might be a topic that is better addressed with training or videos. 
++ Read about the ["bring me a rock"](https://jonathanbecher.com/2020/08/30/the-bring-me-a-rock-phenomenon/) phenomenon
+  + I am not sure of the exact origins of the term "bring me a rock"
++ [The Leadership Pipeline](https://www.amazon.com/s?k=the+leadership+pipeline+book) by Ram Charan
+  + This book has been around for a while. I found some of the advice less relevant to research organizations, but the general concepts can be helpful. 
++ [Being Glue](https://noidea.dog/glue) by Tanya Reilly
+  + This (very influential) tech talk has an excellent summary of many people's experiences at work where they are not rewarded for valuable work. It is written from the perspective of a software engineer, but it applies more broadly to "technical" work.
+  + "Every senior person in an organization should be aware of the less glamorous - and often less-promotable - work that needs to happen to make a team successful."
+
+### I am looking to add more resources/books/podcasts on
+
++ Career development resources - I am looking for some good materials that are freely available for helping others with career planning. 
++ Hiring and recruiting - what works well
+
+### Other thoughts
+
+Lately, I have been considering whether there is room for people to switch between people leadership and technical leadership in computational research.
+Can you change from people management to an individual contributor and then back again? My experience has been that this is a less common path in Big Pharma/biotech (the industry where I am most familiar). 
+However, this flexible path seems more common in tech companies. Maybe it can be the future for us as well? Personally, I went from a role where I was 90% managing teams and doing various other "leadership things" to joining a small company where I needed to provide a lot of research contributions and strategy while we got off the ground. Am I viewed as a good leader if I am too "in the weeds"? I also know people who are perfectly capable of people management roles (maybe even great at them!), but the technical work energizes them and gets them excited to show up every Monday morning.
+

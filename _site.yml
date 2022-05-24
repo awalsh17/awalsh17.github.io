@@ -3,6 +3,7 @@ title: "Alice Walsh"
 description: |
   Alice Walsh's personal website
 output_dir: "docs"
+base_url: https://awalsh17.github.io
 navbar:
   right:
     - text: "Home"

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Alice Walsh</title>
+    <link>https://awalsh17.github.io</link>
+    <atom:link href="https://awalsh17.github.io/posts.xml" rel="self" type="application/rss+xml"/>
+    <description>Alice Walsh's personal website
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Tue, 24 May 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Managing data teams: resources</title>
+      <dc:creator>Alice Walsh</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-05-24-management-resources</link>
+      <description>A collection of links and book recommendations.</description>
+      <guid>https://awalsh17.github.io/posts/2022-05-24-management-resources</guid>
+      <pubDate>Tue, 24 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://awalsh17.github.io/posts/2022-05-24-management-resources/images/noun-books-3647451.png" medium="image" type="image/png" width="1200" height="1200"/>
+    </item>
+    <item>
+      <title>Recap of AACR 2022</title>
+      <dc:creator>Alice</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-04-15-aacr-recap-2022</link>
+      <description>My notes on the AACR annual meeting, April 2022.</description>
+      <guid>https://awalsh17.github.io/posts/2022-04-15-aacr-recap-2022</guid>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://awalsh17.github.io/posts/2022-04-15-aacr-recap-2022/images/aacr_floor.png" medium="image" type="image/png" width="640" height="640"/>
+    </item>
+    <item>
+      <title>Quilting with R, part 2</title>
+      <dc:creator>Alice</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-03-30-quilting-part-2</link>
+      <description>More about using R to make a quilt.</description>
+      <guid>https://awalsh17.github.io/posts/2022-03-30-quilting-part-2</guid>
+      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://awalsh17.github.io/posts/2022-03-30-quilting-part-2/images/finished_top.png" medium="image" type="image/png" width="1267" height="1280"/>
+    </item>
+    <item>
+      <title>Quilting with R, part 1</title>
+      <dc:creator>Alice</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-03-24-quilting-with-r</link>
+      <description>One of my hobbies is quilting, so I designed a quilt in R.</description>
+      <guid>https://awalsh17.github.io/posts/2022-03-24-quilting-with-r</guid>
+      <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://awalsh17.github.io/posts/2022-03-24-quilting-with-r/images/cubes_8_red_blue.png" medium="image" type="image/png" width="4000" height="4000"/>
+    </item>
+    <item>
+      <title>Testing many models with grouped data</title>
+      <dc:creator>Alice</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-03-20-more-models</link>
+      <description>Another example of something I do a lot and forget how to do.</description>
+      <guid>https://awalsh17.github.io/posts/2022-03-20-more-models</guid>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://awalsh17.github.io/posts/2022-03-20-more-models/more-models_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Stacking vectors</title>
+      <dc:creator>Alice</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-03-13-stacking-in-base-r</link>
+      <description>Don't forget to use stack().</description>
+      <guid>https://awalsh17.github.io/posts/2022-03-13-stacking-in-base-r</guid>
+      <pubDate>Sun, 13 Mar 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Welcome to the test site</title>
+      <dc:creator>Alice</dc:creator>
+      <link>https://awalsh17.github.io/posts/welcome</link>
+      <description>This is a test post.</description>
+      <guid>https://awalsh17.github.io/posts/welcome</guid>
+      <pubDate>Sun, 13 Mar 2022 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

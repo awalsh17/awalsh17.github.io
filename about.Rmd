@@ -7,7 +7,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ```{r, echo = FALSE, fig.align='center', out.width='30%'}
-knitr::include_graphics("images/headshot.png")
+knitr::include_graphics("images/AliceW_2.jpg")
 ```
 
 I am a computational biologist/data scientist/bioinformatician/bioengineer that enjoys learning from complex biological data sets and collaborating. (My pronouns are she/her.)
