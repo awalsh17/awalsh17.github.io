@@ -1,0 +1,80 @@
+---
+title: "How does one come up with new ideas?"
+description: |
+  Useful tips I learned from the book "Zig Zag" by Keith Sawyer.
+author:
+  - name: Alice Walsh
+    url: {}
+date: 2022-06-05
+preview: images/noun-increase-creativity-4287123.png
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+A book that stuck in my head is ["Zig Zag: The Surprising Path to Greater Creativity"](http://zigzagcreate.com) by Keith Sawyer. The book is both a quick read and a dense resource that you could return to in the future when you are in a creative rut or need to solve a problem.
+
+Coming up with new ideas when you have a challenge can be profoundly daunting. So I am very excited to find new ways to come up with ideas. I have used the two techniques described here and found them worth sharing.
+
+## Method one: transform other ideas
+
+The first is the [SCAMPER](https://en.wikipedia.org/wiki/SCAMPER) method. Scamper stands for **S**ubstitute, **C**ombine, **A**dapt, **M**agnify or Modify, **P**ut to other uses, **E**liminate, **R**earrange or Reverse.
+
+<aside>
+A short Wikipedia journey has informed me that SCAMPER may have been created by Alex Faickney Osborn in the 1950s. He was an advertising executive and he is credited with inventing *brainstorming*.
+</aside>
+
+This is a process to get new ideas by taking existing ones and transforming them. You go through each letter in SCAMPER and identify ideas that use that verb.
+
+Here is an example that I created from my own life. I recently started quilting, and I needed new ideas for quilt designs (rather than using an existing pattern). Note that this example works well because I am creating a physical thing. This method is less effective for abstract problems.
+
+*Prompt: I need a new quilt design*
+
+-   *Substitute*: I could use different colors or fabrics in an existing design
+
+<aside>
+Idea is not that exciting or new
+</aside>
+
+-   *Combine*: Merge a couple of different patterns. Or combine two things I know about, like painting and quilting or programming and quilting 
+
+<aside>
+This idea was fascinating to me and I have created a few different designs now using R
+</aside>
+
+-   *Adapt*: I could convert a cross stitch pattern to a quilt pattern or try to convert a painting or photo into a pattern 
+
+<aside>
+A good one! I have been drawing inspiration from paintings
+</aside>
+
+-   *Magnify* *or modify*: Make a small quilt block into a huge block. Modify a classic block by rotating or transforming into a different shape 
+
+<aside>
+This idea feels like a good seed that could be built upon and improved
+</aside>
+
+-   *Eliminate*: Quilt on a panel or solid fabric *without* piecing 
+
+<aside>
+Also a solid idea, but too basic
+</aside>
+
+-   *Reverse*: Decompose an existing pattern and rearrange it 
+
+<aside>
+This also fell into the less exciting bucket once I reviewed all the ideas
+</aside>
+
+
+Looking at the above ideas, I love a lot of them! The next step was to prioritize these ideas and then improve them further.
+
+## Method two: an idea quota
+
+The second method I have used is very simple. You choose a problem and come up with three (or more if you are ambitious!) new ideas/solutions every day for a week. I love this method because it can also be collaborative. You could give everyone on a team a prompt, and then everyone can share all their ideas at the end of the week.
+
+Another wonderful thing about this method is that it eliminates the tendency I have to use my first idea. This process helps me consider more ideas and take the time to dive into the problem. It is also highly challenging to add more ideas after coming up with ten ideas.

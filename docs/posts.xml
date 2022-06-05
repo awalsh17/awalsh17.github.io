@@ -7,7 +7,16 @@
     <description>Alice Walsh's personal website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 24 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>How does one come up with new ideas?</title>
+      <dc:creator>Alice Walsh</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-06-05-how-does-one-come-up-with-new-ideas</link>
+      <description>Useful tips I learned from the book "Zig Zag" by Keith Sawyer.</description>
+      <guid>https://awalsh17.github.io/posts/2022-06-05-how-does-one-come-up-with-new-ideas</guid>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://awalsh17.github.io/posts/2022-06-05-how-does-one-come-up-with-new-ideas/images/noun-increase-creativity-4287123.png" medium="image" type="image/png" width="1200" height="1200"/>
+    </item>
     <item>
       <title>Managing data teams: resources</title>
       <dc:creator>Alice Walsh</dc:creator>
