@@ -85,3 +85,15 @@ d-appendix {
     vertical-align: text-top!important;
 }
 
+/* links */
+a {
+    color: #05668D;
+    border-bottom: 0px;
+    text-decoration: none;
+}
+
+d-article a {
+    color: #05668D;
+    border-bottom: 0px;
+    text-decoration: none;
+}
