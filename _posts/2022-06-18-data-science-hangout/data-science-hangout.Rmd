@@ -1,0 +1,47 @@
+---
+title: "Hanging out with data people"
+description: |
+  I co-hosted a "Data Science Hangout" in May.
+author:
+  - name: Alice Walsh
+    url: {}
+date: 2022-06-18
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+I was the "co-host" for a [Data Science Hangout](https://www.rstudio.com/data-science-hangout/) a few weeks ago in May. These are weekly informal conversations for data science leaders hosted by Rachael Dempsey and RStudio. Thanks Rachael for inviting me! You can find the recording of the event over on RStudio's YouTube.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hwFeleEGcXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Rachael and RStudio did a fantastic job recapping the conversation in the video description. However, I will add a rough outline of the topics covered here.
+
+#### 1. Optimizing remote work
+
++ One difference between remote work and in-office work is the reduction of thinking time away from screens. The book "Rest: Why You Get More Done When You Work Less" by Alex Soojung-Kim Pang was recommended, and I plan to read it (ironically when I have more time and less work).
++ I shared some ideas for effective remote brainstorming (a topic I am interested in). One of the great benefits of remote teams is the ability to leverage technology to "level the playing field" for people of different personality types, communication styles, and work locations.
+
+#### 2. Getting better data versus imputing missing data
+
++ There was a lot of good chat about imputing missing data and recommendations for R packages. Unfortunately, the zoom chat is not captured in the YouTube replay - one of the benefits of joining live!
++ A good reminder here about not always trying to "fix" your analysis but seeing if you can "fix" your data. Sometimes that missing data could point to a problem in your data generation that is worth investigating.
+
+#### 3. Conferences, tech, and leadership styles
+
++ Someone asked about good conferences to attend. There were some excellent recommendations and another data point that many people are excited about the possibility of attending in-person meetings again.
++ Tech stacks and teams switching from one set of tools (SAS) to another (R). There were some great tips from others who have been through this transition.
++ Resources to get started in data science. The recommendations included finding something you are excited about and choosing something to focus on.
++ Leadership styles and communicating with stakeholders. My advice was to be opinionated and make it clear what you want your audience to take away from any analysis/presentation/report.
+
+#### 4. Hiring (emphasis on remote hiring)
+
++ My aspiration is to make our interview experience better for candidates. I have been doing remote interviews for a while now, but I still struggle. I hope to continue to innovate and draw from the collective wisdom about what works and what doesn't.
++ The YouTube video has an excellent summary of this part. It seems the consensus is split on whether a technical component (live interview, take-home assignment, etc.) is valuable or not. 
++ One idea I like is to have the candidate bring their own example code/analysis and walk through it as part of the interview.
+

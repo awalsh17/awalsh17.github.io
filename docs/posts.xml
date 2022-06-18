@@ -7,7 +7,15 @@
     <description>Alice Walsh's personal website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Hanging out with data people</title>
+      <dc:creator>Alice Walsh</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-06-18-data-science-hangout</link>
+      <description>I co-hosted a "Data Science Hangout" in May.</description>
+      <guid>https://awalsh17.github.io/posts/2022-06-18-data-science-hangout</guid>
+      <pubDate>Sat, 18 Jun 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>How does one come up with new ideas?</title>
       <dc:creator>Alice Walsh</dc:creator>
@@ -68,14 +76,6 @@
       <link>https://awalsh17.github.io/posts/2022-03-13-stacking-in-base-r</link>
       <description>Don't forget to use stack().</description>
       <guid>https://awalsh17.github.io/posts/2022-03-13-stacking-in-base-r</guid>
-      <pubDate>Sun, 13 Mar 2022 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Welcome to the test site</title>
-      <dc:creator>Alice</dc:creator>
-      <link>https://awalsh17.github.io/posts/welcome</link>
-      <description>This is a test post.</description>
-      <guid>https://awalsh17.github.io/posts/welcome</guid>
       <pubDate>Sun, 13 Mar 2022 00:00:00 +0000</pubDate>
     </item>
   </channel>
