@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2022-07-26-rstudio-conference-talk-2022/",
+    "title": "RStudio Conference Talk 2022",
+    "description": "Becoming creative: How I designed a quilt with R.",
+    "author": [
+      {
+        "name": "Alice Walsh",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-26",
+    "categories": [],
+    "contents": "\nI am excited to attend my first in person R-centric conference this\nyear with RStudio::conf.\nI am even more excited to get the opportunity to participate as a\nspeaker.\nLink to slides\nAbstract\n\nWhen someone asks about essential skills for data careers, I often\nhear responses like R, Python, and machine learning. However, I argue\nthat creativity is an underrated skill that you can and should practice.\nIn this talk, I want to tell you a story about a project I did to\nstretch my creative brain and use my favorite tool, R. I designed a\nquilt in R using generative art ideas. Then I created individual blocks\nthat make up the larger design. I used foundation paper piecing, a\nmethod that allows for intricate designs but has geometrical\nconstraints. I hope my talk will entertain and inspire folks to exercise\ntheir creative muscles to improve their performance and enjoyment of\ntheir day jobs.\n\nI will update this post when I have a link to the recording!\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-07-26T08:49:11-04:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-06-18-data-science-hangout/",
     "title": "Hanging out with data people",
     "description": "I co-hosted a \"Data Science Hangout\" in May.",

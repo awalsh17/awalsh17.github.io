@@ -7,7 +7,15 @@
     <description>Alice Walsh's personal website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 18 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>RStudio Conference Talk 2022</title>
+      <dc:creator>Alice Walsh</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-07-26-rstudio-conference-talk-2022</link>
+      <description>Becoming creative: How I designed a quilt with R.</description>
+      <guid>https://awalsh17.github.io/posts/2022-07-26-rstudio-conference-talk-2022</guid>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Hanging out with data people</title>
       <dc:creator>Alice Walsh</dc:creator>

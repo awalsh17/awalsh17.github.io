@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title>RStudio Conference Talk 2022</title>
+
+  <meta property="description" itemprop="description" content="Becoming creative: How I designed a quilt with R."/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-07-26"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-07-26"/>
+  <meta name="article:author" content="Alice Walsh"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="RStudio Conference Talk 2022"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Becoming creative: How I designed a quilt with R."/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="RStudio Conference Talk 2022"/>
+  <meta property="twitter:description" content="Becoming creative: How I designed a quilt with R."/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["RStudio Conference Talk 2022"]},{"type":"character","attributes":{},"value":["Becoming creative: How I designed a quilt with R.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Alice Walsh"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2022-07-26"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["rstudio-conference-talk-2022_files/anchor-4.2.2/anchor.min.js","rstudio-conference-talk-2022_files/bowser-1.9.3/bowser.min.js","rstudio-conference-talk-2022_files/distill-2.2.21/template.v2.js","rstudio-conference-talk-2022_files/header-attrs-2.11/header-attrs.js","rstudio-conference-talk-2022_files/jquery-3.6.0/jquery-3.6.0.js","rstudio-conference-talk-2022_files/jquery-3.6.0/jquery-3.6.0.min.js","rstudio-conference-talk-2022_files/jquery-3.6.0/jquery-3.6.0.min.map","rstudio-conference-talk-2022_files/popper-2.6.0/popper.min.js","rstudio-conference-talk-2022_files/tippy-6.2.7/tippy-bundle.umd.min.js","rstudio-conference-talk-2022_files/tippy-6.2.7/tippy-light-border.css","rstudio-conference-talk-2022_files/tippy-6.2.7/tippy.css","rstudio-conference-talk-2022_files/tippy-6.2.7/tippy.umd.min.js","rstudio-conference-talk-2022_files/webcomponents-2.0.0/webcomponents.js","slides/assets/04CD5680-4C6E-4CC6-B100-C2C71BCEBD5C/04CD5680-4C6E-4CC6-B100-C2C71BCEBD5C.json","slides/assets/04CD5680-4C6E-4CC6-B100-C2C71BCEBD5C/04CD5680-4C6E-4CC6-B100-C2C71BCEBD5C.jsonp","slides/assets/04CD5680-4C6E-4CC6-B100-C2C71BCEBD5C/assets/04CD5680-4C6E-4CC6-B100-C2C71BCEBD5C.pdf","slides/assets/04CD5680-4C6E-4CC6-B100-C2C71BCEBD5C/assets/04CD5680-4C6E-4CC6-B100-C2C71BCEBD5C.pdfp","slides/assets/04CD5680-4C6E-4CC6-B100-C2C71BCEBD5C/thumbnail.jpeg","slides/assets/05ACE0EF-235A-49D3-91C5-D67F79B46545/05ACE0EF-235A-49D3-91C5-D67F79B46545.json","slides/assets/05ACE0EF-235A-49D3-91C5-D67F79B46545/05ACE0EF-235A-49D3-91C5-D67F79B46545.jsonp","slides/assets/05ACE0EF-235A-49D3-91C5-D67F79B46545/assets/05ACE0EF-235A-49D3-91C5-D67F79B46545.pdf","slides/assets/05ACE0EF-235A-49D3-91C5-D67F79B46545/assets/05ACE0EF-235A-49D3-91C5-D67F79B46545.pdfp","slides/assets/05ACE0EF-235A-49D3-91C5-D67F79B46545/thumbnail.jpeg","slides/assets/0A199F1A-0CF3-458C-85F6-915FFB825B56/0A199F1A-0CF3-458C-85F6-915FFB825B56.json","slides/assets/0A199F1A-0CF3-458C-85F6-915FFB825B56/0A199F1A-0CF3-458C-85F6-915FFB825B56.jsonp","slides/assets/0A199F1A-0CF3-458C-85F6-915FFB825B56/assets/0A199F1A-0CF3-458C-85F6-915FFB825B56.pdf","slides/assets/0A199F1A-0CF3-458C-85F6-915FFB825B56/assets/0A199F1A-0CF3-458C-85F6-915FFB825B56.pdfp","slides/assets/0A199F1A-0CF3-458C-85F6-915FFB825B56/thumbnail.jpeg","slides/assets/0DB55448-3EE7-40F9-AC12-644356ADBE34/0DB55448-3EE7-40F9-AC12-644356ADBE34.json","slides/assets/0DB55448-3EE7-40F9-AC12-644356ADBE34/0DB55448-3EE7-40F9-AC12-644356ADBE34.jsonp","slides/assets/0DB55448-3EE7-40F9-AC12-644356ADBE34/assets/0DB55448-3EE7-40F9-AC12-644356ADBE34.pdf","slides/assets/0DB55448-3EE7-40F9-AC12-644356ADBE34/assets/0DB55448-3EE7-40F9-AC12-644356ADBE34.pdfp","slides/assets/0DB55448-3EE7-40F9-AC12-644356ADBE34/thumbnail.jpeg","slides/assets/167FE454-1D25-454E-A280-328BBF71CBEF/167FE454-1D25-454E-A280-328BBF71CBEF.json","slides/assets/167FE454-1D25-454E-A280-328BBF71CBEF/167FE454-1D25-454E-A280-328BBF71CBEF.jsonp","slides/assets/167FE454-1D25-454E-A280-328BBF71CBEF/assets/167FE454-1D25-454E-A280-328BBF71CBEF.pdf","slides/assets/167FE454-1D25-454E-A280-328BBF71CBEF/assets/167FE454-1D25-454E-A280-328BBF71CBEF.pdfp","slides/assets/167FE454-1D25-454E-A280-328BBF71CBEF/thumbnail.jpeg","slides/assets/1ED636AD-A227-4105-BE81-3E43BD517947/1ED636AD-A227-4105-BE81-3E43BD517947.json","slides/assets/1ED636AD-A227-4105-BE81-3E43BD517947/1ED636AD-A227-4105-BE81-3E43BD517947.jsonp","slides/assets/1ED636AD-A227-4105-BE81-3E43BD517947/assets/1ED636AD-A227-4105-BE81-3E43BD517947.pdf","slides/assets/1ED636AD-A227-4105-BE81-3E43BD517947/assets/1ED636AD-A227-4105-BE81-3E43BD517947.pdfp","slides/assets/1ED636AD-A227-4105-BE81-3E43BD517947/thumbnail.jpeg","slides/assets/2172FAE9-36C0-4562-8E9D-C8E61238BFB6/2172FAE9-36C0-4562-8E9D-C8E61238BFB6.json","slides/assets/2172FAE9-36C0-4562-8E9D-C8E61238BFB6/2172FAE9-36C0-4562-8E9D-C8E61238BFB6.jsonp","slides/assets/2172FAE9-36C0-4562-8E9D-C8E61238BFB6/assets/2172FAE9-36C0-4562-8E9D-C8E61238BFB6.pdf","slides/assets/2172FAE9-36C0-4562-8E9D-C8E61238BFB6/assets/2172FAE9-36C0-4562-8E9D-C8E61238BFB6.pdfp","slides/assets/2172FAE9-36C0-4562-8E9D-C8E61238BFB6/thumbnail.jpeg","slides/assets/272AC09A-04AC-42FC-95E4-8B6607DDB975/272AC09A-04AC-42FC-95E4-8B6607DDB975.json","slides/assets/272AC09A-04AC-42FC-95E4-8B6607DDB975/272AC09A-04AC-42FC-95E4-8B6607DDB975.jsonp","slides/assets/272AC09A-04AC-42FC-95E4-8B6607DDB975/assets/272AC09A-04AC-42FC-95E4-8B6607DDB975.pdf","slides/assets/272AC09A-04AC-42FC-95E4-8B6607DDB975/assets/272AC09A-04AC-42FC-95E4-8B6607DDB975.pdfp","slides/assets/272AC09A-04AC-42FC-95E4-8B6607DDB975/thumbnail.jpeg","slides/assets/2DEFA46C-6460-4594-8385-5D004D367C94/2DEFA46C-6460-4594-8385-5D004D367C94.json","slides/assets/2DEFA46C-6460-4594-8385-5D004D367C94/2DEFA46C-6460-4594-8385-5D004D367C94.jsonp","slides/assets/2DEFA46C-6460-4594-8385-5D004D367C94/assets/2DEFA46C-6460-4594-8385-5D004D367C94.pdf","slides/assets/2DEFA46C-6460-4594-8385-5D004D367C94/assets/2DEFA46C-6460-4594-8385-5D004D367C94.pdfp","slides/assets/2DEFA46C-6460-4594-8385-5D004D367C94/thumbnail.jpeg","slides/assets/2FF0C445-29D9-4A4F-A047-988D9193A944/2FF0C445-29D9-4A4F-A047-988D9193A944.json","slides/assets/2FF0C445-29D9-4A4F-A047-988D9193A944/2FF0C445-29D9-4A4F-A047-988D9193A944.jsonp","slides/assets/2FF0C445-29D9-4A4F-A047-988D9193A944/assets/2FF0C445-29D9-4A4F-A047-988D9193A944.pdf","slides/assets/2FF0C445-29D9-4A4F-A047-988D9193A944/assets/2FF0C445-29D9-4A4F-A047-988D9193A944.pdfp","slides/assets/2FF0C445-29D9-4A4F-A047-988D9193A944/thumbnail.jpeg","slides/assets/324D53AE-F132-49FB-B216-367934807C6A/324D53AE-F132-49FB-B216-367934807C6A.json","slides/assets/324D53AE-F132-49FB-B216-367934807C6A/324D53AE-F132-49FB-B216-367934807C6A.jsonp","slides/assets/324D53AE-F132-49FB-B216-367934807C6A/assets/324D53AE-F132-49FB-B216-367934807C6A.pdf","slides/assets/324D53AE-F132-49FB-B216-367934807C6A/assets/324D53AE-F132-49FB-B216-367934807C6A.pdfp","slides/assets/324D53AE-F132-49FB-B216-367934807C6A/thumbnail.jpeg","slides/assets/344CA33D-B482-49E7-8A6E-D38587107469/344CA33D-B482-49E7-8A6E-D38587107469.json","slides/assets/344CA33D-B482-49E7-8A6E-D38587107469/344CA33D-B482-49E7-8A6E-D38587107469.jsonp","slides/assets/344CA33D-B482-49E7-8A6E-D38587107469/assets/344CA33D-B482-49E7-8A6E-D38587107469.pdf","slides/assets/344CA33D-B482-49E7-8A6E-D38587107469/assets/344CA33D-B482-49E7-8A6E-D38587107469.pdfp","slides/assets/344CA33D-B482-49E7-8A6E-D38587107469/thumbnail.jpeg","slides/assets/35A162D7-42FD-409B-BF81-836F8F88D59F/35A162D7-42FD-409B-BF81-836F8F88D59F.json","slides/assets/35A162D7-42FD-409B-BF81-836F8F88D59F/35A162D7-42FD-409B-BF81-836F8F88D59F.jsonp","slides/assets/35A162D7-42FD-409B-BF81-836F8F88D59F/assets/35A162D7-42FD-409B-BF81-836F8F88D59F.pdf","slides/assets/35A162D7-42FD-409B-BF81-836F8F88D59F/assets/35A162D7-42FD-409B-BF81-836F8F88D59F.pdfp","slides/assets/35A162D7-42FD-409B-BF81-836F8F88D59F/thumbnail.jpeg","slides/assets/371B99B8-91E4-4BE3-A4E0-B432702DBA93/371B99B8-91E4-4BE3-A4E0-B432702DBA93.json","slides/assets/371B99B8-91E4-4BE3-A4E0-B432702DBA93/371B99B8-91E4-4BE3-A4E0-B432702DBA93.jsonp","slides/assets/371B99B8-91E4-4BE3-A4E0-B432702DBA93/assets/371B99B8-91E4-4BE3-A4E0-B432702DBA93.pdf","slides/assets/371B99B8-91E4-4BE3-A4E0-B432702DBA93/assets/371B99B8-91E4-4BE3-A4E0-B432702DBA93.pdfp","slides/assets/371B99B8-91E4-4BE3-A4E0-B432702DBA93/thumbnail.jpeg","slides/assets/429DDCAD-058A-4251-94F0-C2B2A73DD443/429DDCAD-058A-4251-94F0-C2B2A73DD443.json","slides/assets/429DDCAD-058A-4251-94F0-C2B2A73DD443/429DDCAD-058A-4251-94F0-C2B2A73DD443.jsonp","slides/assets/429DDCAD-058A-4251-94F0-C2B2A73DD443/assets/429DDCAD-058A-4251-94F0-C2B2A73DD443.pdf","slides/assets/429DDCAD-058A-4251-94F0-C2B2A73DD443/assets/429DDCAD-058A-4251-94F0-C2B2A73DD443.pdfp","slides/assets/429DDCAD-058A-4251-94F0-C2B2A73DD443/thumbnail.jpeg","slides/assets/4463224B-BD07-4045-98BA-51116EF114BE/4463224B-BD07-4045-98BA-51116EF114BE.json","slides/assets/4463224B-BD07-4045-98BA-51116EF114BE/4463224B-BD07-4045-98BA-51116EF114BE.jsonp","slides/assets/4463224B-BD07-4045-98BA-51116EF114BE/assets/4463224B-BD07-4045-98BA-51116EF114BE.pdf","slides/assets/4463224B-BD07-4045-98BA-51116EF114BE/assets/4463224B-BD07-4045-98BA-51116EF114BE.pdfp","slides/assets/4463224B-BD07-4045-98BA-51116EF114BE/thumbnail.jpeg","slides/assets/4C96773C-A847-4FAC-9E33-50813760FE39/4C96773C-A847-4FAC-9E33-50813760FE39.json","slides/assets/4C96773C-A847-4FAC-9E33-50813760FE39/4C96773C-A847-4FAC-9E33-50813760FE39.jsonp","slides/assets/4C96773C-A847-4FAC-9E33-50813760FE39/assets/4C96773C-A847-4FAC-9E33-50813760FE39.pdf","slides/assets/4C96773C-A847-4FAC-9E33-50813760FE39/assets/4C96773C-A847-4FAC-9E33-50813760FE39.pdfp","slides/assets/4C96773C-A847-4FAC-9E33-50813760FE39/thumbnail.jpeg","slides/assets/4D62643B-4153-4239-B926-BF7B272A57C8/4D62643B-4153-4239-B926-BF7B272A57C8.json","slides/assets/4D62643B-4153-4239-B926-BF7B272A57C8/4D62643B-4153-4239-B926-BF7B272A57C8.jsonp","slides/assets/4D62643B-4153-4239-B926-BF7B272A57C8/assets/4D62643B-4153-4239-B926-BF7B272A57C8.pdf","slides/assets/4D62643B-4153-4239-B926-BF7B272A57C8/assets/4D62643B-4153-4239-B926-BF7B272A57C8.pdfp","slides/assets/4D62643B-4153-4239-B926-BF7B272A57C8/thumbnail.jpeg","slides/assets/4EFDDE71-32E3-48BD-8339-EB7176890BC6/4EFDDE71-32E3-48BD-8339-EB7176890BC6.json","slides/assets/4EFDDE71-32E3-48BD-8339-EB7176890BC6/4EFDDE71-32E3-48BD-8339-EB7176890BC6.jsonp","slides/assets/4EFDDE71-32E3-48BD-8339-EB7176890BC6/assets/4EFDDE71-32E3-48BD-8339-EB7176890BC6.pdf","slides/assets/4EFDDE71-32E3-48BD-8339-EB7176890BC6/assets/4EFDDE71-32E3-48BD-8339-EB7176890BC6.pdfp","slides/assets/4EFDDE71-32E3-48BD-8339-EB7176890BC6/thumbnail.jpeg","slides/assets/518F7F5B-D8E5-496A-9E0F-1D228A2B90A3/518F7F5B-D8E5-496A-9E0F-1D228A2B90A3.json","slides/assets/518F7F5B-D8E5-496A-9E0F-1D228A2B90A3/518F7F5B-D8E5-496A-9E0F-1D228A2B90A3.jsonp","slides/assets/518F7F5B-D8E5-496A-9E0F-1D228A2B90A3/assets/518F7F5B-D8E5-496A-9E0F-1D228A2B90A3.pdf","slides/assets/518F7F5B-D8E5-496A-9E0F-1D228A2B90A3/assets/518F7F5B-D8E5-496A-9E0F-1D228A2B90A3.pdfp","slides/assets/518F7F5B-D8E5-496A-9E0F-1D228A2B90A3/thumbnail.jpeg","slides/assets/54AE0E79-FD51-4F85-AA0F-63A312408E7E/54AE0E79-FD51-4F85-AA0F-63A312408E7E.json","slides/assets/54AE0E79-FD51-4F85-AA0F-63A312408E7E/54AE0E79-FD51-4F85-AA0F-63A312408E7E.jsonp","slides/assets/54AE0E79-FD51-4F85-AA0F-63A312408E7E/assets/54AE0E79-FD51-4F85-AA0F-63A312408E7E.pdf","slides/assets/54AE0E79-FD51-4F85-AA0F-63A312408E7E/assets/54AE0E79-FD51-4F85-AA0F-63A312408E7E.pdfp","slides/assets/54AE0E79-FD51-4F85-AA0F-63A312408E7E/thumbnail.jpeg","slides/assets/597A2EDA-80EC-4D00-B99C-FAFCA4451685/597A2EDA-80EC-4D00-B99C-FAFCA4451685.json","slides/assets/597A2EDA-80EC-4D00-B99C-FAFCA4451685/597A2EDA-80EC-4D00-B99C-FAFCA4451685.jsonp","slides/assets/597A2EDA-80EC-4D00-B99C-FAFCA4451685/assets/597A2EDA-80EC-4D00-B99C-FAFCA4451685.pdf","slides/assets/597A2EDA-80EC-4D00-B99C-FAFCA4451685/assets/597A2EDA-80EC-4D00-B99C-FAFCA4451685.pdfp","slides/assets/597A2EDA-80EC-4D00-B99C-FAFCA4451685/thumbnail.jpeg","slides/assets/5AD4233A-633A-439D-822B-914BE2BEB740/5AD4233A-633A-439D-822B-914BE2BEB740.json","slides/assets/5AD4233A-633A-439D-822B-914BE2BEB740/5AD4233A-633A-439D-822B-914BE2BEB740.jsonp","slides/assets/5AD4233A-633A-439D-822B-914BE2BEB740/assets/5AD4233A-633A-439D-822B-914BE2BEB740.pdf","slides/assets/5AD4233A-633A-439D-822B-914BE2BEB740/assets/5AD4233A-633A-439D-822B-914BE2BEB740.pdfp","slides/assets/5AD4233A-633A-439D-822B-914BE2BEB740/thumbnail.jpeg","slides/assets/63E4F04F-8FEA-40A2-909B-61EFDCDBBED5/63E4F04F-8FEA-40A2-909B-61EFDCDBBED5.json","slides/assets/63E4F04F-8FEA-40A2-909B-61EFDCDBBED5/63E4F04F-8FEA-40A2-909B-61EFDCDBBED5.jsonp","slides/assets/63E4F04F-8FEA-40A2-909B-61EFDCDBBED5/assets/63E4F04F-8FEA-40A2-909B-61EFDCDBBED5.pdf","slides/assets/63E4F04F-8FEA-40A2-909B-61EFDCDBBED5/assets/63E4F04F-8FEA-40A2-909B-61EFDCDBBED5.pdfp","slides/assets/63E4F04F-8FEA-40A2-909B-61EFDCDBBED5/thumbnail.jpeg","slides/assets/66F28D89-DC90-4E38-A136-1E922D6C8C73/66F28D89-DC90-4E38-A136-1E922D6C8C73.json","slides/assets/66F28D89-DC90-4E38-A136-1E922D6C8C73/66F28D89-DC90-4E38-A136-1E922D6C8C73.jsonp","slides/assets/66F28D89-DC90-4E38-A136-1E922D6C8C73/assets/66F28D89-DC90-4E38-A136-1E922D6C8C73.pdf","slides/assets/66F28D89-DC90-4E38-A136-1E922D6C8C73/assets/66F28D89-DC90-4E38-A136-1E922D6C8C73.pdfp","slides/assets/66F28D89-DC90-4E38-A136-1E922D6C8C73/thumbnail.jpeg","slides/assets/6A1DBE0E-D4F8-45B0-B102-3B3CF5B2A38B/6A1DBE0E-D4F8-45B0-B102-3B3CF5B2A38B.json","slides/assets/6A1DBE0E-D4F8-45B0-B102-3B3CF5B2A38B/6A1DBE0E-D4F8-45B0-B102-3B3CF5B2A38B.jsonp","slides/assets/6A1DBE0E-D4F8-45B0-B102-3B3CF5B2A38B/assets/6A1DBE0E-D4F8-45B0-B102-3B3CF5B2A38B.pdf","slides/assets/6A1DBE0E-D4F8-45B0-B102-3B3CF5B2A38B/assets/6A1DBE0E-D4F8-45B0-B102-3B3CF5B2A38B.pdfp","slides/assets/6A1DBE0E-D4F8-45B0-B102-3B3CF5B2A38B/thumbnail.jpeg","slides/assets/70177936-60CC-4222-A111-F0B875412EB0/70177936-60CC-4222-A111-F0B875412EB0.json","slides/assets/70177936-60CC-4222-A111-F0B875412EB0/70177936-60CC-4222-A111-F0B875412EB0.jsonp","slides/assets/70177936-60CC-4222-A111-F0B875412EB0/assets/70177936-60CC-4222-A111-F0B875412EB0.pdf","slides/assets/70177936-60CC-4222-A111-F0B875412EB0/assets/70177936-60CC-4222-A111-F0B875412EB0.pdfp","slides/assets/70177936-60CC-4222-A111-F0B875412EB0/thumbnail.jpeg","slides/assets/70366E61-2EFB-4BC6-BFA6-F1FCC2F8EF15/70366E61-2EFB-4BC6-BFA6-F1FCC2F8EF15.json","slides/assets/70366E61-2EFB-4BC6-BFA6-F1FCC2F8EF15/70366E61-2EFB-4BC6-BFA6-F1FCC2F8EF15.jsonp","slides/assets/70366E61-2EFB-4BC6-BFA6-F1FCC2F8EF15/assets/70366E61-2EFB-4BC6-BFA6-F1FCC2F8EF15.pdf","slides/assets/70366E61-2EFB-4BC6-BFA6-F1FCC2F8EF15/assets/70366E61-2EFB-4BC6-BFA6-F1FCC2F8EF15.pdfp","slides/assets/70366E61-2EFB-4BC6-BFA6-F1FCC2F8EF15/thumbnail.jpeg","slides/assets/70C1FC5A-D312-4D19-B841-F0711DC6989E/70C1FC5A-D312-4D19-B841-F0711DC6989E.json","slides/assets/70C1FC5A-D312-4D19-B841-F0711DC6989E/70C1FC5A-D312-4D19-B841-F0711DC6989E.jsonp","slides/assets/70C1FC5A-D312-4D19-B841-F0711DC6989E/assets/70C1FC5A-D312-4D19-B841-F0711DC6989E.pdf","slides/assets/70C1FC5A-D312-4D19-B841-F0711DC6989E/assets/70C1FC5A-D312-4D19-B841-F0711DC6989E.pdfp","slides/assets/70C1FC5A-D312-4D19-B841-F0711DC6989E/thumbnail.jpeg","slides/assets/8FC20CF9-6DC1-4A14-8055-429F1EE97E5D/8FC20CF9-6DC1-4A14-8055-429F1EE97E5D.json","slides/assets/8FC20CF9-6DC1-4A14-8055-429F1EE97E5D/8FC20CF9-6DC1-4A14-8055-429F1EE97E5D.jsonp","slides/assets/8FC20CF9-6DC1-4A14-8055-429F1EE97E5D/assets/8FC20CF9-6DC1-4A14-8055-429F1EE97E5D.pdf","slides/assets/8FC20CF9-6DC1-4A14-8055-429F1EE97E5D/assets/8FC20CF9-6DC1-4A14-8055-429F1EE97E5D.pdfp","slides/assets/8FC20CF9-6DC1-4A14-8055-429F1EE97E5D/thumbnail.jpeg","slides/assets/A0C49ABF-672B-4D63-9C8E-6B13BB8A5B4B/A0C49ABF-672B-4D63-9C8E-6B13BB8A5B4B.json","slides/assets/A0C49ABF-672B-4D63-9C8E-6B13BB8A5B4B/A0C49ABF-672B-4D63-9C8E-6B13BB8A5B4B.jsonp","slides/assets/A0C49ABF-672B-4D63-9C8E-6B13BB8A5B4B/assets/A0C49ABF-672B-4D63-9C8E-6B13BB8A5B4B.pdf","slides/assets/A0C49ABF-672B-4D63-9C8E-6B13BB8A5B4B/assets/A0C49ABF-672B-4D63-9C8E-6B13BB8A5B4B.pdfp","slides/assets/A0C49ABF-672B-4D63-9C8E-6B13BB8A5B4B/thumbnail.jpeg","slides/assets/A1C58C8D-D6C4-4069-A0A1-00CBAA942058/A1C58C8D-D6C4-4069-A0A1-00CBAA942058.json","slides/assets/A1C58C8D-D6C4-4069-A0A1-00CBAA942058/A1C58C8D-D6C4-4069-A0A1-00CBAA942058.jsonp","slides/assets/A1C58C8D-D6C4-4069-A0A1-00CBAA942058/assets/A1C58C8D-D6C4-4069-A0A1-00CBAA942058.pdf","slides/assets/A1C58C8D-D6C4-4069-A0A1-00CBAA942058/assets/A1C58C8D-D6C4-4069-A0A1-00CBAA942058.pdfp","slides/assets/A1C58C8D-D6C4-4069-A0A1-00CBAA942058/thumbnail.jpeg","slides/assets/AC46F987-E692-4B15-B4DF-794141F15877/AC46F987-E692-4B15-B4DF-794141F15877.json","slides/assets/AC46F987-E692-4B15-B4DF-794141F15877/AC46F987-E692-4B15-B4DF-794141F15877.jsonp","slides/assets/AC46F987-E692-4B15-B4DF-794141F15877/assets/AC46F987-E692-4B15-B4DF-794141F15877.pdf","slides/assets/AC46F987-E692-4B15-B4DF-794141F15877/assets/AC46F987-E692-4B15-B4DF-794141F15877.pdfp","slides/assets/AC46F987-E692-4B15-B4DF-794141F15877/thumbnail.jpeg","slides/assets/B1FD10E0-34BC-4827-A071-8A5EFD6D4311/assets/B1FD10E0-34BC-4827-A071-8A5EFD6D4311.pdf","slides/assets/B1FD10E0-34BC-4827-A071-8A5EFD6D4311/assets/B1FD10E0-34BC-4827-A071-8A5EFD6D4311.pdfp","slides/assets/B1FD10E0-34BC-4827-A071-8A5EFD6D4311/B1FD10E0-34BC-4827-A071-8A5EFD6D4311.json","slides/assets/B1FD10E0-34BC-4827-A071-8A5EFD6D4311/B1FD10E0-34BC-4827-A071-8A5EFD6D4311.jsonp","slides/assets/B1FD10E0-34BC-4827-A071-8A5EFD6D4311/thumbnail.jpeg","slides/assets/B29C3738-5F2C-4B5C-81A8-9707BD00DA67/assets/B29C3738-5F2C-4B5C-81A8-9707BD00DA67.pdf","slides/assets/B29C3738-5F2C-4B5C-81A8-9707BD00DA67/assets/B29C3738-5F2C-4B5C-81A8-9707BD00DA67.pdfp","slides/assets/B29C3738-5F2C-4B5C-81A8-9707BD00DA67/B29C3738-5F2C-4B5C-81A8-9707BD00DA67.json","slides/assets/B29C3738-5F2C-4B5C-81A8-9707BD00DA67/B29C3738-5F2C-4B5C-81A8-9707BD00DA67.jsonp","slides/assets/B29C3738-5F2C-4B5C-81A8-9707BD00DA67/thumbnail.jpeg","slides/assets/B5BED4AD-2878-4E76-BE3C-90B205BC6AA8/assets/B5BED4AD-2878-4E76-BE3C-90B205BC6AA8.pdf","slides/assets/B5BED4AD-2878-4E76-BE3C-90B205BC6AA8/assets/B5BED4AD-2878-4E76-BE3C-90B205BC6AA8.pdfp","slides/assets/B5BED4AD-2878-4E76-BE3C-90B205BC6AA8/B5BED4AD-2878-4E76-BE3C-90B205BC6AA8.json","slides/assets/B5BED4AD-2878-4E76-BE3C-90B205BC6AA8/B5BED4AD-2878-4E76-BE3C-90B205BC6AA8.jsonp","slides/assets/B5BED4AD-2878-4E76-BE3C-90B205BC6AA8/thumbnail.jpeg","slides/assets/BC8EEC2E-22B1-4B39-9999-2331DA64ACE9/assets/BC8EEC2E-22B1-4B39-9999-2331DA64ACE9.pdf","slides/assets/BC8EEC2E-22B1-4B39-9999-2331DA64ACE9/assets/BC8EEC2E-22B1-4B39-9999-2331DA64ACE9.pdfp","slides/assets/BC8EEC2E-22B1-4B39-9999-2331DA64ACE9/BC8EEC2E-22B1-4B39-9999-2331DA64ACE9.json","slides/assets/BC8EEC2E-22B1-4B39-9999-2331DA64ACE9/BC8EEC2E-22B1-4B39-9999-2331DA64ACE9.jsonp","slides/assets/BC8EEC2E-22B1-4B39-9999-2331DA64ACE9/thumbnail.jpeg","slides/assets/BCC7225E-4950-430D-8355-4F5E152DAE5B/assets/BCC7225E-4950-430D-8355-4F5E152DAE5B.pdf","slides/assets/BCC7225E-4950-430D-8355-4F5E152DAE5B/assets/BCC7225E-4950-430D-8355-4F5E152DAE5B.pdfp","slides/assets/BCC7225E-4950-430D-8355-4F5E152DAE5B/BCC7225E-4950-430D-8355-4F5E152DAE5B.json","slides/assets/BCC7225E-4950-430D-8355-4F5E152DAE5B/BCC7225E-4950-430D-8355-4F5E152DAE5B.jsonp","slides/assets/BCC7225E-4950-430D-8355-4F5E152DAE5B/thumbnail.jpeg","slides/assets/C368BA99-F45E-49B4-9B33-9A56BDF28B56/assets/C368BA99-F45E-49B4-9B33-9A56BDF28B56.pdf","slides/assets/C368BA99-F45E-49B4-9B33-9A56BDF28B56/assets/C368BA99-F45E-49B4-9B33-9A56BDF28B56.pdfp","slides/assets/C368BA99-F45E-49B4-9B33-9A56BDF28B56/C368BA99-F45E-49B4-9B33-9A56BDF28B56.json","slides/assets/C368BA99-F45E-49B4-9B33-9A56BDF28B56/C368BA99-F45E-49B4-9B33-9A56BDF28B56.jsonp","slides/assets/C368BA99-F45E-49B4-9B33-9A56BDF28B56/thumbnail.jpeg","slides/assets/D2F9A049-098F-4C09-8557-E934EF5E82D9/assets/D2F9A049-098F-4C09-8557-E934EF5E82D9.pdf","slides/assets/D2F9A049-098F-4C09-8557-E934EF5E82D9/assets/D2F9A049-098F-4C09-8557-E934EF5E82D9.pdfp","slides/assets/D2F9A049-098F-4C09-8557-E934EF5E82D9/D2F9A049-098F-4C09-8557-E934EF5E82D9.json","slides/assets/D2F9A049-098F-4C09-8557-E934EF5E82D9/D2F9A049-098F-4C09-8557-E934EF5E82D9.jsonp","slides/assets/D2F9A049-098F-4C09-8557-E934EF5E82D9/thumbnail.jpeg","slides/assets/D95A6417-3AC3-4919-AB6D-4A5C1020B742/assets/D95A6417-3AC3-4919-AB6D-4A5C1020B742.pdf","slides/assets/D95A6417-3AC3-4919-AB6D-4A5C1020B742/assets/D95A6417-3AC3-4919-AB6D-4A5C1020B742.pdfp","slides/assets/D95A6417-3AC3-4919-AB6D-4A5C1020B742/D95A6417-3AC3-4919-AB6D-4A5C1020B742.json","slides/assets/D95A6417-3AC3-4919-AB6D-4A5C1020B742/D95A6417-3AC3-4919-AB6D-4A5C1020B742.jsonp","slides/assets/D95A6417-3AC3-4919-AB6D-4A5C1020B742/thumbnail.jpeg","slides/assets/EFD9E5AD-8D11-4B57-B84A-DBD12A31DB98/assets/EFD9E5AD-8D11-4B57-B84A-DBD12A31DB98.pdf","slides/assets/EFD9E5AD-8D11-4B57-B84A-DBD12A31DB98/assets/EFD9E5AD-8D11-4B57-B84A-DBD12A31DB98.pdfp","slides/assets/EFD9E5AD-8D11-4B57-B84A-DBD12A31DB98/EFD9E5AD-8D11-4B57-B84A-DBD12A31DB98.json","slides/assets/EFD9E5AD-8D11-4B57-B84A-DBD12A31DB98/EFD9E5AD-8D11-4B57-B84A-DBD12A31DB98.jsonp","slides/assets/EFD9E5AD-8D11-4B57-B84A-DBD12A31DB98/thumbnail.jpeg","slides/assets/F0B544F3-9187-493B-9DB6-2D5FDCF3BB13/assets/F0B544F3-9187-493B-9DB6-2D5FDCF3BB13.pdf","slides/assets/F0B544F3-9187-493B-9DB6-2D5FDCF3BB13/assets/F0B544F3-9187-493B-9DB6-2D5FDCF3BB13.pdfp","slides/assets/F0B544F3-9187-493B-9DB6-2D5FDCF3BB13/F0B544F3-9187-493B-9DB6-2D5FDCF3BB13.json","slides/assets/F0B544F3-9187-493B-9DB6-2D5FDCF3BB13/F0B544F3-9187-493B-9DB6-2D5FDCF3BB13.jsonp","slides/assets/F0B544F3-9187-493B-9DB6-2D5FDCF3BB13/thumbnail.jpeg","slides/assets/F13169F9-80A0-41AE-918C-15B07A841E97/assets/F13169F9-80A0-41AE-918C-15B07A841E97.pdf","slides/assets/F13169F9-80A0-41AE-918C-15B07A841E97/assets/F13169F9-80A0-41AE-918C-15B07A841E97.pdfp","slides/assets/F13169F9-80A0-41AE-918C-15B07A841E97/F13169F9-80A0-41AE-918C-15B07A841E97.json","slides/assets/F13169F9-80A0-41AE-918C-15B07A841E97/F13169F9-80A0-41AE-918C-15B07A841E97.jsonp","slides/assets/F13169F9-80A0-41AE-918C-15B07A841E97/thumbnail.jpeg","slides/assets/F21B1802-6C9C-46F3-A16F-8550887E5667/assets/F21B1802-6C9C-46F3-A16F-8550887E5667.pdf","slides/assets/F21B1802-6C9C-46F3-A16F-8550887E5667/assets/F21B1802-6C9C-46F3-A16F-8550887E5667.pdfp","slides/assets/F21B1802-6C9C-46F3-A16F-8550887E5667/F21B1802-6C9C-46F3-A16F-8550887E5667.json","slides/assets/F21B1802-6C9C-46F3-A16F-8550887E5667/F21B1802-6C9C-46F3-A16F-8550887E5667.jsonp","slides/assets/F21B1802-6C9C-46F3-A16F-8550887E5667/thumbnail.jpeg","slides/assets/F31B9B62-A291-4B72-AFD0-55564040FC49/assets/F31B9B62-A291-4B72-AFD0-55564040FC49.pdf","slides/assets/F31B9B62-A291-4B72-AFD0-55564040FC49/assets/F31B9B62-A291-4B72-AFD0-55564040FC49.pdfp","slides/assets/F31B9B62-A291-4B72-AFD0-55564040FC49/F31B9B62-A291-4B72-AFD0-55564040FC49.json","slides/assets/F31B9B62-A291-4B72-AFD0-55564040FC49/F31B9B62-A291-4B72-AFD0-55564040FC49.jsonp","slides/assets/F31B9B62-A291-4B72-AFD0-55564040FC49/thumbnail.jpeg","slides/assets/F7BEB85F-1BD2-4637-BFE0-FB0D7066CF1E/assets/F7BEB85F-1BD2-4637-BFE0-FB0D7066CF1E.pdf","slides/assets/F7BEB85F-1BD2-4637-BFE0-FB0D7066CF1E/assets/F7BEB85F-1BD2-4637-BFE0-FB0D7066CF1E.pdfp","slides/assets/F7BEB85F-1BD2-4637-BFE0-FB0D7066CF1E/F7BEB85F-1BD2-4637-BFE0-FB0D7066CF1E.json","slides/assets/F7BEB85F-1BD2-4637-BFE0-FB0D7066CF1E/F7BEB85F-1BD2-4637-BFE0-FB0D7066CF1E.jsonp","slides/assets/F7BEB85F-1BD2-4637-BFE0-FB0D7066CF1E/thumbnail.jpeg","slides/assets/FE0F7EF1-3F6F-4FA6-8FA7-B24E8F141D78/assets/FE0F7EF1-3F6F-4FA6-8FA7-B24E8F141D78.pdf","slides/assets/FE0F7EF1-3F6F-4FA6-8FA7-B24E8F141D78/assets/FE0F7EF1-3F6F-4FA6-8FA7-B24E8F141D78.pdfp","slides/assets/FE0F7EF1-3F6F-4FA6-8FA7-B24E8F141D78/FE0F7EF1-3F6F-4FA6-8FA7-B24E8F141D78.json","slides/assets/FE0F7EF1-3F6F-4FA6-8FA7-B24E8F141D78/FE0F7EF1-3F6F-4FA6-8FA7-B24E8F141D78.jsonp","slides/assets/FE0F7EF1-3F6F-4FA6-8FA7-B24E8F141D78/thumbnail.jpeg","slides/assets/FF211E3F-CF95-47AC-9B45-81BDDD22D732/assets/FF211E3F-CF95-47AC-9B45-81BDDD22D732.pdf","slides/assets/FF211E3F-CF95-47AC-9B45-81BDDD22D732/assets/FF211E3F-CF95-47AC-9B45-81BDDD22D732.pdfp","slides/assets/FF211E3F-CF95-47AC-9B45-81BDDD22D732/FF211E3F-CF95-47AC-9B45-81BDDD22D732.json","slides/assets/FF211E3F-CF95-47AC-9B45-81BDDD22D732/FF211E3F-CF95-47AC-9B45-81BDDD22D732.jsonp","slides/assets/FF211E3F-CF95-47AC-9B45-81BDDD22D732/thumbnail.jpeg","slides/assets/header.json","slides/assets/header.jsonp","slides/assets/player/Acknowledgements.pdf","slides/assets/player/close_hi@2x.png","slides/assets/player/close_n@2x.png","slides/assets/player/close_p@2x.png","slides/assets/player/kn-cloud_pd_help_btn-H@2x.png","slides/assets/player/kn-cloud_pd_help_btn-N@2x.png","slides/assets/player/kn-cloud_pd_help_btn-P@2x.png","slides/assets/player/main.js","slides/assets/player/pdfjs/bcmaps.js","slides/assets/player/pdfjs/pdf_worker.js","slides/assets/player/pdfjs/pdf.js","slides/assets/player/pdfjs/web/cmaps/78-EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/78-EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/78-H.bcmap","slides/assets/player/pdfjs/web/cmaps/78-RKSJ-H.bcmap","slides/assets/player/pdfjs/web/cmaps/78-RKSJ-V.bcmap","slides/assets/player/pdfjs/web/cmaps/78-V.bcmap","slides/assets/player/pdfjs/web/cmaps/78ms-RKSJ-H.bcmap","slides/assets/player/pdfjs/web/cmaps/78ms-RKSJ-V.bcmap","slides/assets/player/pdfjs/web/cmaps/83pv-RKSJ-H.bcmap","slides/assets/player/pdfjs/web/cmaps/90ms-RKSJ-H.bcmap","slides/assets/player/pdfjs/web/cmaps/90ms-RKSJ-V.bcmap","slides/assets/player/pdfjs/web/cmaps/90msp-RKSJ-H.bcmap","slides/assets/player/pdfjs/web/cmaps/90msp-RKSJ-V.bcmap","slides/assets/player/pdfjs/web/cmaps/90pv-RKSJ-H.bcmap","slides/assets/player/pdfjs/web/cmaps/90pv-RKSJ-V.bcmap","slides/assets/player/pdfjs/web/cmaps/Add-H.bcmap","slides/assets/player/pdfjs/web/cmaps/Add-RKSJ-H.bcmap","slides/assets/player/pdfjs/web/cmaps/Add-RKSJ-V.bcmap","slides/assets/player/pdfjs/web/cmaps/Add-V.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-CNS1-0.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-CNS1-1.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-CNS1-2.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-CNS1-3.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-CNS1-4.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-CNS1-5.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-CNS1-6.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-CNS1-UCS2.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-GB1-0.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-GB1-1.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-GB1-2.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-GB1-3.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-GB1-4.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-GB1-5.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-GB1-UCS2.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Japan1-0.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Japan1-1.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Japan1-2.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Japan1-3.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Japan1-4.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Japan1-5.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Japan1-6.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Japan1-UCS2.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Korea1-0.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Korea1-1.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Korea1-2.bcmap","slides/assets/player/pdfjs/web/cmaps/Adobe-Korea1-UCS2.bcmap","slides/assets/player/pdfjs/web/cmaps/B5-H.bcmap","slides/assets/player/pdfjs/web/cmaps/B5-V.bcmap","slides/assets/player/pdfjs/web/cmaps/B5pc-H.bcmap","slides/assets/player/pdfjs/web/cmaps/B5pc-V.bcmap","slides/assets/player/pdfjs/web/cmaps/CNS-EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/CNS-EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/CNS1-H.bcmap","slides/assets/player/pdfjs/web/cmaps/CNS1-V.bcmap","slides/assets/player/pdfjs/web/cmaps/CNS2-H.bcmap","slides/assets/player/pdfjs/web/cmaps/CNS2-V.bcmap","slides/assets/player/pdfjs/web/cmaps/ETen-B5-H.bcmap","slides/assets/player/pdfjs/web/cmaps/ETen-B5-V.bcmap","slides/assets/player/pdfjs/web/cmaps/ETenms-B5-H.bcmap","slides/assets/player/pdfjs/web/cmaps/ETenms-B5-V.bcmap","slides/assets/player/pdfjs/web/cmaps/ETHK-B5-H.bcmap","slides/assets/player/pdfjs/web/cmaps/ETHK-B5-V.bcmap","slides/assets/player/pdfjs/web/cmaps/EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/Ext-H.bcmap","slides/assets/player/pdfjs/web/cmaps/Ext-RKSJ-H.bcmap","slides/assets/player/pdfjs/web/cmaps/Ext-RKSJ-V.bcmap","slides/assets/player/pdfjs/web/cmaps/Ext-V.bcmap","slides/assets/player/pdfjs/web/cmaps/GB-EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/GB-EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/GB-H.bcmap","slides/assets/player/pdfjs/web/cmaps/GB-V.bcmap","slides/assets/player/pdfjs/web/cmaps/GBK-EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/GBK-EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/GBK2K-H.bcmap","slides/assets/player/pdfjs/web/cmaps/GBK2K-V.bcmap","slides/assets/player/pdfjs/web/cmaps/GBKp-EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/GBKp-EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/GBpc-EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/GBpc-EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/GBT-EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/GBT-EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/GBT-H.bcmap","slides/assets/player/pdfjs/web/cmaps/GBT-V.bcmap","slides/assets/player/pdfjs/web/cmaps/GBTpc-EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/GBTpc-EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/H.bcmap","slides/assets/player/pdfjs/web/cmaps/Hankaku.bcmap","slides/assets/player/pdfjs/web/cmaps/Hiragana.bcmap","slides/assets/player/pdfjs/web/cmaps/HKdla-B5-H.bcmap","slides/assets/player/pdfjs/web/cmaps/HKdla-B5-V.bcmap","slides/assets/player/pdfjs/web/cmaps/HKdlb-B5-H.bcmap","slides/assets/player/pdfjs/web/cmaps/HKdlb-B5-V.bcmap","slides/assets/player/pdfjs/web/cmaps/HKgccs-B5-H.bcmap","slides/assets/player/pdfjs/web/cmaps/HKgccs-B5-V.bcmap","slides/assets/player/pdfjs/web/cmaps/HKm314-B5-H.bcmap","slides/assets/player/pdfjs/web/cmaps/HKm314-B5-V.bcmap","slides/assets/player/pdfjs/web/cmaps/HKm471-B5-H.bcmap","slides/assets/player/pdfjs/web/cmaps/HKm471-B5-V.bcmap","slides/assets/player/pdfjs/web/cmaps/HKscs-B5-H.bcmap","slides/assets/player/pdfjs/web/cmaps/HKscs-B5-V.bcmap","slides/assets/player/pdfjs/web/cmaps/Katakana.bcmap","slides/assets/player/pdfjs/web/cmaps/KSC-EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/KSC-EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/KSC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/KSC-Johab-H.bcmap","slides/assets/player/pdfjs/web/cmaps/KSC-Johab-V.bcmap","slides/assets/player/pdfjs/web/cmaps/KSC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/KSCms-UHC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/KSCms-UHC-HW-H.bcmap","slides/assets/player/pdfjs/web/cmaps/KSCms-UHC-HW-V.bcmap","slides/assets/player/pdfjs/web/cmaps/KSCms-UHC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/KSCpc-EUC-H.bcmap","slides/assets/player/pdfjs/web/cmaps/KSCpc-EUC-V.bcmap","slides/assets/player/pdfjs/web/cmaps/LICENSE","slides/assets/player/pdfjs/web/cmaps/NWP-H.bcmap","slides/assets/player/pdfjs/web/cmaps/NWP-V.bcmap","slides/assets/player/pdfjs/web/cmaps/RKSJ-H.bcmap","slides/assets/player/pdfjs/web/cmaps/RKSJ-V.bcmap","slides/assets/player/pdfjs/web/cmaps/Roman.bcmap","slides/assets/player/pdfjs/web/cmaps/UniCNS-UCS2-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniCNS-UCS2-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniCNS-UTF16-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniCNS-UTF16-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniCNS-UTF32-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniCNS-UTF32-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniCNS-UTF8-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniCNS-UTF8-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniGB-UCS2-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniGB-UCS2-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniGB-UTF16-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniGB-UTF16-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniGB-UTF32-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniGB-UTF32-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniGB-UTF8-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniGB-UTF8-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS-UCS2-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS-UCS2-HW-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS-UCS2-HW-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS-UCS2-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS-UTF16-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS-UTF16-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS-UTF32-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS-UTF32-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS-UTF8-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS-UTF8-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS2004-UTF16-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS2004-UTF16-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS2004-UTF32-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS2004-UTF32-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS2004-UTF8-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJIS2004-UTF8-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJISPro-UCS2-HW-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJISPro-UCS2-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJISPro-UTF8-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJISX0213-UTF32-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJISX0213-UTF32-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJISX02132004-UTF32-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniJISX02132004-UTF32-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniKS-UCS2-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniKS-UCS2-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniKS-UTF16-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniKS-UTF16-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniKS-UTF32-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniKS-UTF32-V.bcmap","slides/assets/player/pdfjs/web/cmaps/UniKS-UTF8-H.bcmap","slides/assets/player/pdfjs/web/cmaps/UniKS-UTF8-V.bcmap","slides/assets/player/pdfjs/web/cmaps/V.bcmap","slides/assets/player/pdfjs/web/cmaps/WP-Symbol.bcmap","slides/assets/player/pdfjs/web/compatibility.js","slides/assets/player/spinner.png","slides/assets/player/styles.css","slides/assets/player/waiting_bezel.png","slides/assets/thumbnail.jpeg","slides/index.html"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="rstudio-conference-talk-2022_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="rstudio-conference-talk-2022_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="rstudio-conference-talk-2022_files/popper-2.6.0/popper.min.js"></script>
+  <link href="rstudio-conference-talk-2022_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="rstudio-conference-talk-2022_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="rstudio-conference-talk-2022_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="rstudio-conference-talk-2022_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="rstudio-conference-talk-2022_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="rstudio-conference-talk-2022_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="rstudio-conference-talk-2022_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"RStudio Conference Talk 2022","description":"Becoming creative: How I designed a quilt with R.","authors":[{"author":"Alice Walsh","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-07-26T00:00:00.000-04:00","citationText":"Walsh, 2022"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>RStudio Conference Talk 2022</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Becoming creative: How I designed a quilt with R.</p></p>
+</div>
+
+<div class="d-byline">
+  Alice Walsh true 
+  
+<br/>2022-07-26
+</div>
+
+<div class="d-article">
+<p>I am excited to attend my first in person R-centric conference this
+year with RStudio::conf.</p>
+<p>I am even more excited to get the opportunity to participate as a
+speaker.</p>
+<p>Link to <a href="./slides/index.html">slides</a></p>
+<p>Abstract</p>
+<blockquote>
+<p>When someone asks about essential skills for data careers, I often
+hear responses like R, Python, and machine learning. However, I argue
+that creativity is an underrated skill that you can and should practice.
+In this talk, I want to tell you a story about a project I did to
+stretch my creative brain and use my favorite tool, R. I designed a
+quilt in R using generative art ideas. Then I created individual blocks
+that make up the larger design. I used foundation paper piecing, a
+method that allows for intricate designs but has geometrical
+constraints. I hope my talk will entertain and inspire folks to exercise
+their creative muscles to improve their performance and enjoyment of
+their day jobs.</p>
+</blockquote>
+<p>I will update this post when I have a link to the recording!</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
