@@ -5,9 +5,11 @@
 
 # drafts
 draft_posts/*
+docs/draft_posts/*
 
 # Session Data files
 .RData
+.Rds
 
 # User-specific files
 .Ruserdata

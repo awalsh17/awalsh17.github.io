@@ -7,7 +7,16 @@
     <description>Alice Walsh's personal website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 26 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Which pharma companies tweet about data science?</title>
+      <dc:creator>Alice Walsh</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-09-04-what-pharma-companies-tweet-about-data-science</link>
+      <description>Mining some twitter data for trends and differences.</description>
+      <guid>https://awalsh17.github.io/posts/2022-09-04-what-pharma-companies-tweet-about-data-science</guid>
+      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://awalsh17.github.io/posts/2022-09-04-what-pharma-companies-tweet-about-data-science/what-pharma-companies-tweet-about-data-science_files/figure-html5/unnamed-chunk-9-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>RStudio Conference Talk 2022</title>
       <dc:creator>Alice Walsh</dc:creator>

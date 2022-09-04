@@ -1,0 +1,272 @@
+---
+title: "Which pharma companies tweet about data science?"
+description: |
+  Mining some twitter data for trends and differences.
+author:
+  - name: Alice Walsh
+    url: {}
+date: 2022-09-04
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+set.seed(4786)
+# Load some friends
+library(rtweet) # have already set up tokens, etc.
+library(dplyr)
+library(ggplot2)
+library(tidytext)
+source(("code/plot_top_words.R")) # a function created previously
+# plot theme
+theme_set(theme_minimal(base_family = "Avenir"))
+```
+
+
+I am interested in the rise of data science across all industries and the
+growing demand for data-intensive work. In particular, I am interested in pharmaceutical 
+development (where I work) for a couple of reasons:
+
+1. Data-intensive work is not "new" to Pharmaceutical development. Biostats teams 
+are essential to designing clinicial trials, analyzing these trials, and reporting
+the results. Likewise, research teams in preclinical R&D have also generated and 
+processed large data sets for many years. 
+2. I get a lot of ads/tweets/etc. about the potential of AI/ML/Data for drug discovery
+and development. I am in the optimistic camp when it comes to how better technology
+and methods can unlock scientific breakthroughs. But, I am also weary of unrealistic
+expectations and the abuse of "AI" to seem innovative or as a marketing tool.
+
+Here I looked at twitter data as a publicly-available data source to confirm or reject my hypotheses around 
+
+1. Which companies are promoting AI/ML/Data as part of their marketing
+2. Whether the use of data science terms has increased in the last few years
+
+## Methods
+
+I used the great [{rtweet}](https://github.com/ropensci/rtweet) package to collect recent tweets from companies official twitter accounts. 
+It had been several years since I used this package, but thankfully, my old code worked fine. 
+I would recommend [Will Chase's post](https://www.williamrchase.com/post/is-hadley-wickham-a-cat-or-dog-person-a-twitter-tidytext-analysis/) on this topic as an intro, which I found very helpful when I got started.
+
+Most companies have multiple twitter accounts. I tried to be fair and use each company's "main" account, but sometimes there was also a "science at xyz" account that seemed interesting. So I also looked at those.
+
+I chose a list of [top Pharma companies](https://www.fiercepharma.com/special-reports/top-20-pharma-companies-2021-revenue) based on sales. I manually found their twitter handles.
+
+I also added a representative public biotech, Recursion, to serve as a comparison for a company
+that I expected to have a lot of content about data and machine learning.
+
+```{r}
+ph_usernames <- c(
+  "janssenglobal",
+  "pfizer", 
+  "roche",
+  "abbvie",
+  "novartis", "novartisscience",
+  "merck",
+  "bmsnews", "scienceatbms",
+  "gsk",
+  "sanofi", "sanofiscience",
+  "astrazeneca",
+  "takedapharma",
+  "lillypad",
+  "recursionpharma") 
+```
+
+
+I retrieved the last 3,200 tweets from each account.
+
+```{r, echo=TRUE, eval=FALSE}
+ph_tweets <- get_timeline(ph_usernames, n=3200)
+```
+
+```{r, echo=FALSE, eval=TRUE}
+# use cached results for ease
+ph_tweets <- readRDS(("data/tweets_2022-09-04.Rds"))
+```
+
+
+This is a lot of tweets, but some are retweets.
+
+```{r}
+nrow(ph_tweets)
+```
+
+
+I combined the tweet data for companies where I queried both the "main" account and 
+the "science" account. 
+
+```{r}
+ph_tweets <- ph_tweets %>% 
+  mutate(screen_name = case_when(
+    screen_name %in% c("bmsnews","ScienceAtBMS") ~ "bmsnews|ScienceAtBMS",
+    screen_name %in% c("Novartis","NovartisScience") ~ "Novartis|NovartisScience",
+    screen_name %in% c("sanofi", "SanofiScience") ~ "Sanofi|SanofiScience",
+    TRUE ~ screen_name
+  ))
+```
+
+## Who tweeted about data science the most?
+
+I can calculate the number of tweets per company that contain certain words.
+
+```{r}
+count_tweets_by_word <- function(data, search_words) {
+  data %>% 
+    # no retweets
+    filter(!is_retweet) %>%
+    # remove urls
+    mutate(text_filt = 
+             stringr::str_replace_all(text,"https?://t.co/[A-Za-z\\d]+|&amp;", "")) %>% 
+    mutate(tweet_pos = stringr::str_detect(text_filt, 
+                                           paste(search_words, collapse = "|"))) %>% 
+    group_by(screen_name) %>% 
+    summarise(n_pos = sum(tweet_pos),
+              n_neg = sum(!tweet_pos), 
+              .groups = "drop") %>%
+    mutate(perc_pos = scales::percent(n_pos / (n_pos + n_neg))) %>% 
+    arrange(desc(n_pos / (n_pos + n_neg)))
+}
+```
+
+Let's test with "data".
+
+```{r}
+count_tweets_by_word(ph_tweets, search_words = "[Dd]ata") %>% 
+  DT::datatable(rownames = FALSE,
+                colnames = c("Twitter Handle", "Tweets w/ words",
+                             "Tweets w/o words", "Percent w/ words"))
+```
+
+
+We can get more specific and count tweets with the key words "data science", "AI", and 
+"machine learning". I went ahead and included "statistics," but sadly, there were very few
+tweets containing that word.
+
+```{r}
+search_words <- c("[Dd]ata [Ss]cience",
+                  "[Mm]achine [Ll]earning",
+                  "[ #]AI ",
+                  "[Ss]tatistics")
+count_tweets_by_word(ph_tweets, search_words = search_words) %>% 
+  DT::datatable(rownames = FALSE,
+                colnames = c("Twitter Handle", "Tweets w/ words",
+                             "Tweets w/o words", "Percent w/ words"))
+```
+
+
+Let's check out some example tweets. Pfizer only had two data science tweets in our search:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We’re leading the charge in <a href="https://twitter.com/hashtag/AI?src=hash&amp;ref_src=twsrc%5Etfw">#AI</a> with the development of EstimATTR. This tool aims to educate healthcare providers about combinations of cardiac and non-cardiac conditions known to be associated with wild-type ATTR-CM.</p>&mdash; Pfizer Inc. (@pfizer) <a href="https://twitter.com/pfizer/status/1347936170840358912?ref_src=twsrc%5Etfw">January 9, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+AstraZeneca had 46 tweets. Let's check out their most recent tweet about machine learning:
+
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Machine learning allows us to identify new targets for novel medicines. Our scientists are applying these methods and accelerating cancer drug discovery by combining CRISPR and AI. <a href="https://twitter.com/hashtag/ICML2022?src=hash&amp;ref_src=twsrc%5Etfw">#ICML2022</a> <a href="https://t.co/KXemq7ytc4">https://t.co/KXemq7ytc4</a> <a href="https://t.co/IwdxSoLa6h">pic.twitter.com/IwdxSoLa6h</a></p>&mdash; AstraZeneca (@AstraZeneca) <a href="https://twitter.com/AstraZeneca/status/1548668903852806144?ref_src=twsrc%5Etfw">July 17, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+__Overall, some companies are tweeting more about data science than other companies!__
+However, the total number and the fraction of total tweets that are about data science are tiny.
+
+
+For AstraZeneca (the top tweeter), what were the top words they used overall?
+
+```{r}
+plot_top_words("astrazeneca")
+```
+
+
+## When did everyone start tweeting about data science?
+
+I wanted to look at trends over time, but I was guessing that this would not be feasible
+given the limitation of the twitter API returning the most recent 3,200 tweets.
+
+However, the oldest tweets returned are from 2014, so I decided to do a quick look.
+This is a bit lazy as the earliest tweet available from each company varies because they 
+tweet at different frequencies: Recursion and Novartis less frequently and Janssen more frequently.
+
+Considering the big pharma companies, the first appearance of the terms "data science", 
+"machine learning", "AI", or "statistics" was in 2017.
+
+The trend for these terms was increasing until 2020. I can speculate that there may have been
+a lot of COVID-related tweets in 2020 and 2021, but the data science tweets are back more 
+than ever before in 2022!
+
+```{r code_folding=TRUE}
+ph_tweets %>% 
+  # filter for our interesting tweets
+  filter(screen_name != "RecursionPharma") %>%
+  mutate(text_filt = 
+           stringr::str_replace_all(text, "https?://t.co/[A-Za-z\\d]+|&amp;", "")) %>% 
+  mutate(text_pos = stringr::str_detect(text_filt, 
+                                        paste(search_words, collapse = "|"))) %>%
+  # aggregate by year
+  group_by(text_pos,
+           year = lubridate::floor_date(created_at, unit = "year")) %>% 
+  summarise(tweets = n(),
+            .groups = "drop") %>%
+  tidyr::complete(text_pos, year, 
+                  fill = list(tweets = 0)) %>%
+  group_by(year) %>% 
+  summarise(tweets = tweets[text_pos] / sum(tweets),
+            .groups = "drop") %>% 
+  ggplot(aes(x=year, y=tweets)) + 
+  geom_col() +
+  labs(title = "Prevalence of tweets about data science",
+       subtitle = "Recent tweets from 12 pharma companies",
+       y = "Fraction of all tweets")
+```
+
+<aside>
+I also looked at the number of likes and retweets, but I didn't identify any interesting patterns.
+</aside>
+
+Finally, I can break the tweets down by company. These are the results for the companies with 
+at least ten tweets with my key words.
+
+While AstraZeneca was sending a lot of data science flavored tweets in 2019, there aren't many tweets on the subject for the last 3 years. Meanwhile, Janssen has picked up the torch and is on 
+track to tweet on data science topics more than anyone this year.
+
+These numbers are very small and so you shouldn't draw any serious conclusions.
+I am guessing these changes could be explained by a change of staff on the communications team rather than a major company strategy! 
+
+```{r code_folding=TRUE}
+top_cos <- count_tweets_by_word(ph_tweets, 
+                                search_words = search_words) %>% 
+  filter(n_pos > 9) %>% pull(screen_name)
+
+ph_tweets %>% 
+  # filter for our interesting tweets
+  filter(screen_name %in% top_cos) %>%
+  mutate(text_filt = 
+           stringr::str_replace_all(text, "https?://t.co/[A-Za-z\\d]+|&amp;", "")) %>% 
+  filter(stringr::str_detect(text_filt, 
+                             paste(search_words, collapse = "|"))) %>%
+  # aggregate by year & company
+  group_by(
+           year = lubridate::floor_date(created_at, unit = "year"),
+           screen_name) %>% 
+  summarise(tweets = n(),
+            .groups = "drop") %>%
+  ggplot(aes(x=year, y=tweets, color = screen_name)) + 
+  geom_point() + geom_line() + 
+  facet_wrap(~screen_name, scales = "free_y") +
+  labs(title = "Number of tweets about data science by pharma company",
+       y = "Number") + 
+  theme(legend.position = "none")
+```
+
+
+## What's next?
+
+This project was a fun thing to look at over a long weekend. It confirmed my suspicions that 
+some companies overall tweet more than others, and that some companies are promoting their data science more than others.
+
+I hope to post more on this topic by looking at job descriptions, LinkedIn, and clinical trial data to examine more deeply the impact of data-intensive work on pharma R&D. 
+
+### sessionInfo {.appendix}
+
+```{r}
+pander::pander(sessionInfo())
+```
