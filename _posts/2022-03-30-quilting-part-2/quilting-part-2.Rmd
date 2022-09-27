@@ -230,6 +230,14 @@ knitr::include_graphics("images/finished_top.png")
 The code is available in a GitHub
 [repo](https://github.com/awalsh17/quiltR).
 
+## *Updates*
+
+I wanted to add an image of the finished quilt and also point to [the post](https://awalsh17.github.io/posts/2022-07-26-rstudio-conference-talk-2022/) on my RStudio::conf talk about quilting and creativity. I am inspired to try many more quilting ideas inspired by data or programming. Hopefully, I will add more posts with more details on this project and other projects soon.
+
+```{r, echo = FALSE, out.width="60%", out.height="60%"}
+knitr::include_graphics("images/finished_quilt.png")
+```
+
 ### sessionInfo {.appendix}
 
 ```{r}

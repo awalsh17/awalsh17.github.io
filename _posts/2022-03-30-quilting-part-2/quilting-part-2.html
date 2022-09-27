@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["images/25.png","images/fake_design_step1.png","images/fake_design_step2.png","images/fake_design_step3.png","images/fake_design_step4.png","images/fake_design_step5.png","images/finished_top.png","images/simple_cubes3_toprint.png","images/simple_cubes3.pdf","images/simple_cubes3.png","quilting-part-2_files/anchor-4.2.2/anchor.min.js","quilting-part-2_files/bowser-1.9.3/bowser.min.js","quilting-part-2_files/distill-2.2.21/template.v2.js","quilting-part-2_files/header-attrs-2.11/header-attrs.js","quilting-part-2_files/jquery-3.6.0/jquery-3.6.0.js","quilting-part-2_files/jquery-3.6.0/jquery-3.6.0.min.js","quilting-part-2_files/jquery-3.6.0/jquery-3.6.0.min.map","quilting-part-2_files/popper-2.6.0/popper.min.js","quilting-part-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","quilting-part-2_files/tippy-6.2.7/tippy-light-border.css","quilting-part-2_files/tippy-6.2.7/tippy.css","quilting-part-2_files/tippy-6.2.7/tippy.umd.min.js","quilting-part-2_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["images/25.png","images/fake_design_step1.png","images/fake_design_step2.png","images/fake_design_step3.png","images/fake_design_step4.png","images/fake_design_step5.png","images/finished_quilt.png","images/finished_top.png","images/simple_cubes3_toprint.png","images/simple_cubes3.pdf","images/simple_cubes3.png","quilting-part-2_files/anchor-4.2.2/anchor.min.js","quilting-part-2_files/bowser-1.9.3/bowser.min.js","quilting-part-2_files/distill-2.2.21/template.v2.js","quilting-part-2_files/header-attrs-2.11/header-attrs.js","quilting-part-2_files/jquery-3.6.0/jquery-3.6.0.js","quilting-part-2_files/jquery-3.6.0/jquery-3.6.0.min.js","quilting-part-2_files/jquery-3.6.0/jquery-3.6.0.min.map","quilting-part-2_files/popper-2.6.0/popper.min.js","quilting-part-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","quilting-part-2_files/tippy-6.2.7/tippy-light-border.css","quilting-part-2_files/tippy-6.2.7/tippy.css","quilting-part-2_files/tippy-6.2.7/tippy.umd.min.js","quilting-part-2_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1486,60 +1486,95 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#designing-a-quilt-in-r">Designing a quilt in R</a>
+<li><a href="#designing-a-quilt-in-r"
+id="toc-designing-a-quilt-in-r">Designing a quilt in R</a>
 <ul>
-<li><a href="#the-challenge---going-from-png-to-fabric">The challenge - going from png to fabric</a></li>
-<li><a href="#converting-the-ggplot-into-a-line-drawing">Converting the ggplot into a line drawing</a></li>
-<li><a href="#breaking-into-pieces">Breaking into pieces</a></li>
-<li><a href="#the-finished-quilt-top">The finished quilt top</a>
+<li><a href="#the-challenge---going-from-png-to-fabric"
+id="toc-the-challenge---going-from-png-to-fabric">The challenge - going
+from png to fabric</a></li>
+<li><a href="#converting-the-ggplot-into-a-line-drawing"
+id="toc-converting-the-ggplot-into-a-line-drawing">Converting the ggplot
+into a line drawing</a></li>
+<li><a href="#breaking-into-pieces"
+id="toc-breaking-into-pieces">Breaking into pieces</a></li>
+<li><a href="#the-finished-quilt-top"
+id="toc-the-finished-quilt-top">The finished quilt top</a></li>
+<li><a href="#updates" id="toc-updates"><em>Updates</em></a>
 <ul>
-<li><a href="#sessioninfo">sessionInfo</a></li>
+<li><a href="#sessioninfo" id="toc-sessioninfo">sessionInfo</a></li>
 </ul></li>
 </ul></li>
 </ul>
 </nav>
 </div>
 <h1 id="designing-a-quilt-in-r">Designing a quilt in R</h1>
-<p>To recap the <a href="https://awalsh17.github.io/posts/2022-03-24-quilting-with-r/">previous post</a> on this topic, I generated a quilt design in R using {ggplot2} and I was working through my overall plan:</p>
+<p>To recap the <a
+href="https://awalsh17.github.io/posts/2022-03-24-quilting-with-r/">previous
+post</a> on this topic, I generated a quilt design in R using {ggplot2}
+and I was working through my overall plan:</p>
 <ol type="1">
-<li>I wrote some functions to create a design using ggplot2 (<em>post 1</em>)</li>
-<li>I wrote some code to turn my image into something that could be printed as individual quilt blocks (<em>this post</em>)</li>
+<li>I wrote some functions to create a design using ggplot2 (<em>post
+1</em>)</li>
+<li>I wrote some code to turn my image into something that could be
+printed as individual quilt blocks (<em>this post</em>)</li>
 <li>I made the actual quilt!</li>
-<li>I revisited how to make my process more general and implement something useful to design quilts that use foundation paper piecing</li>
+<li>I revisited how to make my process more general and implement
+something useful to design quilts that use foundation paper piecing</li>
 </ol>
 <p>In this post, I will go through an overview of part 2.</p>
-<h2 id="the-challenge---going-from-png-to-fabric">The challenge - going from png to fabric</h2>
-<p>Once I had a design, I needed to figure out how to make the design into something that could actually be pieced together from fabric.</p>
-<p>The approach I used is called <a href="https://web.stanford.edu/~mleake/projects/paperpiecing/">foundation paper piecing</a>. This is a technique that enables a quilter to make very intricate and precise designs by sewing fabric onto a piece of paper sequentially. This provides stability and precision by sewing along a printed line.</p>
-<p>Foundation paper piecing (FPP for short) allows a quilter to make some incredible creations! Here is a <a href="https://www.quiltcon.com/quiltcon-2022-winners/">link</a> to the winners of this year’s Quiltcon awards. The people’s choice winner (a portrait of the artist’s family) was made using FPP.</p>
-<p>To create an entire FPP quilt, you need to break your larger design into smaller blocks that are “piece-able.” Here is the basic FPP “algorithm” (typically performed by hand):</p>
-<p>A hypothetical starting design (keep in mind that the final quilt will actually be reversed as you sew onto the “wrong” side):</p>
+<h2 id="the-challenge---going-from-png-to-fabric">The challenge - going
+from png to fabric</h2>
+<p>Once I had a design, I needed to figure out how to make the design
+into something that could actually be pieced together from fabric.</p>
+<p>The approach I used is called <a
+href="https://web.stanford.edu/~mleake/projects/paperpiecing/">foundation
+paper piecing</a>. This is a technique that enables a quilter to make
+very intricate and precise designs by sewing fabric onto a piece of
+paper sequentially. This provides stability and precision by sewing
+along a printed line.</p>
+<p>Foundation paper piecing (FPP for short) allows a quilter to make
+some incredible creations! Here is a <a
+href="https://www.quiltcon.com/quiltcon-2022-winners/">link</a> to the
+winners of this year’s Quiltcon awards. The people’s choice winner (a
+portrait of the artist’s family) was made using FPP.</p>
+<p>To create an entire FPP quilt, you need to break your larger design
+into smaller blocks that are “piece-able.” Here is the basic FPP
+“algorithm” (typically performed by hand):</p>
+<p>A hypothetical starting design (keep in mind that the final quilt
+will actually be reversed as you sew onto the “wrong” side):</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/fake_design_step1.png" width="500" style="display: block; margin: auto;" /></p>
 </div>
 <ol type="1">
-<li>Break the larger design into blocks (usually into blocks that can be sewn together into row or columns)</li>
+<li>Break the larger design into blocks (usually into blocks that can be
+sewn together into row or columns)</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/fake_design_step2.png" width="500" style="display: block; margin: auto;" /></p>
 </div>
 <ol start="2" type="1">
-<li>Test whether the blocks are “piece-able” - not all shapes can be created!</li>
+<li>Test whether the blocks are “piece-able” - not all shapes can be
+created!</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/fake_design_step3.png" width="500" style="display: block; margin: auto;" /></p>
 </div>
 <ol start="3" type="1">
-<li><p>If the blocks are not “piece-able” - break into smaller blocks</p></li>
-<li><p>Create the seam lines on the block and label the sections by order</p></li>
+<li><p>If the blocks are not “piece-able” - break into smaller
+blocks</p></li>
+<li><p>Create the seam lines on the block and label the sections by
+order</p></li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/fake_design_step4.png" width="500" style="display: block; margin: auto;" /></p>
 </div>
-<p>I am planning to save more information on steps 3 and 4 for a future post.</p>
+<p>I am planning to save more information on steps 3 and 4 for a future
+post.</p>
 <p>Here, I will just focus on how to do step 2 easily in R.</p>
-<h2 id="converting-the-ggplot-into-a-line-drawing">Converting the ggplot into a line drawing</h2>
-<p>My previous function, <code>save_my_image()</code>, creates the design and can save an image.</p>
+<h2 id="converting-the-ggplot-into-a-line-drawing">Converting the ggplot
+into a line drawing</h2>
+<p>My previous function, <code>save_my_image()</code>, creates the
+design and can save an image.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>design</span> <span class='op'>&lt;-</span> <span class='fu'>save_my_image</span><span class='op'>(</span>out_path <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='co'># don't need to save it</span>
@@ -1554,10 +1589,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/simple_cubes3.png" width="60%" height="60%" style="display: block; margin: auto;" /></p>
 </div>
-<p>I created a new function, <code>create_pattern_pdf</code>, that takes the data.frame and plots as line drawing with labeled polygons. The next section breaks down how that works.</p>
+<p>I created a new function, <code>create_pattern_pdf</code>, that takes
+the data.frame and plots as line drawing with labeled polygons. The next
+section breaks down how that works.</p>
 <h2 id="breaking-into-pieces">Breaking into pieces</h2>
-<p>One easy way to separate a large image into smaller blocks is just to use a program that can do tiled printing (such as Adobe Reader). However, that doesn’t give as much flexibility as you might like to select where to break up the image.</p>
-<p>Below is how I turned a design - which was created on a 2D plane from (x,y) of (0,0) to (100,100) into a set of pdfs that were 8" by 8" to print.</p>
+<p>One easy way to separate a large image into smaller blocks is just to
+use a program that can do tiled printing (such as Adobe Reader).
+However, that doesn’t give as much flexibility as you might like to
+select where to break up the image.</p>
+<p>Below is how I turned a design - which was created on a 2D plane from
+(x,y) of (0,0) to (100,100) into a set of pdfs that were 8” by 8” to
+print.</p>
 <p><em>Rescale to the size of the final quilt</em></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1581,7 +1623,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>grid</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 6 x 4
+<pre><code># A tibble: 6 × 4
       x     y x_end y_end
   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 1     0     0     8     8
@@ -1591,7 +1633,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 5     0    32     8    40
 6     8     0    16     8</code></pre>
 </div>
-<em>Add in some information that was not in the design created previously</em>
+<em>Add in some information that was not in the design created
+previously</em>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Add in the horizontal line (I wanted it at y = 50)</span>
@@ -1604,7 +1647,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<p><em>Loop through each block, plot and label, save out to a file. I tried to label each face an index to indicate color, but in my final design there were overlapping polygons, so colors needed to be manually checked for each block.</em></p>
+<p><em>Loop through each block, plot and label, save out to a file. I
+tried to label each face an index to indicate color, but in my final
+design there were overlapping polygons, so colors needed to be manually
+checked for each block.</em></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span><span class='op'>(</span><span class='va'>grid</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
@@ -1643,18 +1689,37 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 </div>
 <aside>
-<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> One trick to plot only certain limits of the image <em>without</em> removing data is to set the limits within <code>coord_equal()</code>. <br> <br> <br> Note that I used <code>theme_void()</code> again to remove most the axis information and gridlines. <br> <br> <br> Further, I added back in a panel.border, which will be very useful when I go to make the blocks.
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> One trick to plot only
+certain limits of the image <em>without</em> removing data is to set the
+limits within <code>coord_equal()</code>. <br> <br> <br> Note that I
+used <code>theme_void()</code> again to remove most the axis information
+and gridlines. <br> <br> <br> Further, I added back in a panel.border,
+which will be very useful when I go to make the blocks.
 </aside>
-<p>For illustration purposes, here is what one of the blocks looked like. Now I could print (at 100% scale) and the squares were a perfect 8 inches.</p>
+<p>For illustration purposes, here is what one of the blocks looked
+like. Now I could print (at 100% scale) and the squares were a perfect 8
+inches.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/25.png" width="60%" height="60%" style="display: block; margin: auto;" /></p>
 </div>
 <h2 id="the-finished-quilt-top">The finished quilt top</h2>
-<p>Here is a preview of the completed quilt top. I still need to actually quilt it, but the top does look like the original design!</p>
+<p>Here is a preview of the completed quilt top. I still need to
+actually quilt it, but the top does look like the original design!</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/finished_top.png" width="60%" height="60%" style="display: block; margin: auto;" /></p>
 </div>
-<p>The code is available in a GitHub <a href="https://github.com/awalsh17/quiltR">repo</a>.</p>
+<p>The code is available in a GitHub <a
+href="https://github.com/awalsh17/quiltR">repo</a>.</p>
+<h2 id="updates"><em>Updates</em></h2>
+<p>I wanted to add an image of the finished quilt and also point to <a
+href="https://awalsh17.github.io/posts/2022-07-26-rstudio-conference-talk-2022/">the
+post</a> on my RStudio::conf talk about quilting and creativity. I am
+inspired to try many more quilting ideas inspired by data or
+programming. Hopefully, I will add more posts with more details on this
+project and other projects soon.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/finished_quilt.png" width="60%" height="60%" style="display: block; margin: auto;" /></p>
+</div>
 <h3 class="appendix" id="sessioninfo">sessionInfo</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1663,12 +1728,41 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><strong>R version 4.0.5 (2021-03-31)</strong></p>
 <p><strong>Platform:</strong> x86_64-apple-darwin17.0 (64-bit)</p>
-<p><strong>locale:</strong> en_US.UTF-8||en_US.UTF-8||en_US.UTF-8||C||en_US.UTF-8||en_US.UTF-8</p>
-<p><strong>attached base packages:</strong> <em>stats</em>, <em>graphics</em>, <em>grDevices</em>, <em>utils</em>, <em>datasets</em>, <em>methods</em> and <em>base</em></p>
-<p><strong>other attached packages:</strong> <em>ggplot2(v.3.3.5)</em> and <em>dplyr(v.1.0.5)</em></p>
-<p><strong>loaded via a namespace (and not attached):</strong> <em>Rcpp(v.1.0.7)</em>, <em>bslib(v.0.2.5.1)</em>, <em>compiler(v.4.0.5)</em>, <em>pillar(v.1.6.0)</em>, <em>jquerylib(v.0.1.4)</em>, <em>highr(v.0.9)</em>, <em>tools(v.4.0.5)</em>, <em>digest(v.0.6.29)</em>, <em>downlit(v.0.4.0)</em>, <em>gtable(v.0.3.0)</em>, <em>jsonlite(v.1.7.2)</em>, <em>evaluate(v.0.14)</em>, <em>memoise(v.2.0.0)</em>, <em>lifecycle(v.1.0.0)</em>, <em>tibble(v.3.1.0)</em>, <em>pkgconfig(v.2.0.3)</em>, <em>png(v.0.1-7)</em>, <em>rlang(v.0.4.10)</em>, <em>rstudioapi(v.0.13)</em>, <em>cli(v.3.1.0)</em>, <em>DBI(v.1.1.1)</em>, <em>distill(v.1.3)</em>, <em>yaml(v.2.2.1)</em>, <em>xfun(v.0.30)</em>, <em>fastmap(v.1.1.0)</em>, <em>withr(v.2.4.2)</em>, <em>stringr(v.1.4.0)</em>, <em>knitr(v.1.37)</em>, <em>generics(v.0.1.0)</em>, <em>vctrs(v.0.3.7)</em>, <em>sass(v.0.4.0)</em>, <em>grid(v.4.0.5)</em>, <em>tidyselect(v.1.1.0)</em>, <em>glue(v.1.4.2)</em>, <em>R6(v.2.5.0)</em>, <em>fansi(v.0.4.2)</em>, <em>rmarkdown(v.2.11)</em>, <em>pander(v.0.6.3)</em>, <em>tidyr(v.1.1.3)</em>, <em>purrr(v.0.3.4)</em>, <em>magrittr(v.2.0.1)</em>, <em>scales(v.1.1.1)</em>, <em>htmltools(v.0.5.1.1)</em>, <em>ellipsis(v.0.3.1)</em>, <em>assertthat(v.0.2.1)</em>, <em>colorspace(v.2.0-0)</em>, <em>utf8(v.1.2.1)</em>, <em>stringi(v.1.5.3)</em>, <em>munsell(v.0.5.0)</em>, <em>cachem(v.1.0.5)</em> and <em>crayon(v.1.4.1)</em></p>
+<p><strong>locale:</strong>
+en_US.UTF-8||en_US.UTF-8||en_US.UTF-8||C||en_US.UTF-8||en_US.UTF-8</p>
+<p><strong>attached base packages:</strong> <em>stats</em>,
+<em>graphics</em>, <em>grDevices</em>, <em>utils</em>,
+<em>datasets</em>, <em>methods</em> and <em>base</em></p>
+<p><strong>other attached packages:</strong> <em>ggplot2(v.3.3.6)</em>
+and <em>dplyr(v.1.0.9)</em></p>
+<p><strong>loaded via a namespace (and not attached):</strong>
+<em>Rcpp(v.1.0.9)</em>, <em>bslib(v.0.2.5.1)</em>,
+<em>compiler(v.4.0.5)</em>, <em>pillar(v.1.8.0)</em>,
+<em>jquerylib(v.0.1.4)</em>, <em>highr(v.0.9)</em>,
+<em>tools(v.4.0.5)</em>, <em>digest(v.0.6.29)</em>,
+<em>downlit(v.0.4.0)</em>, <em>gtable(v.0.3.0)</em>,
+<em>jsonlite(v.1.8.0)</em>, <em>evaluate(v.0.15)</em>,
+<em>memoise(v.2.0.0)</em>, <em>lifecycle(v.1.0.1)</em>,
+<em>tibble(v.3.1.8)</em>, <em>pkgconfig(v.2.0.3)</em>,
+<em>png(v.0.1-7)</em>, <em>rlang(v.1.0.4)</em>, <em>cli(v.3.3.0)</em>,
+<em>DBI(v.1.1.1)</em>, <em>rstudioapi(v.0.13)</em>,
+<em>distill(v.1.3)</em>, <em>yaml(v.2.3.5)</em>, <em>xfun(v.0.31)</em>,
+<em>fastmap(v.1.1.0)</em>, <em>withr(v.2.5.0)</em>,
+<em>stringr(v.1.4.0)</em>, <em>knitr(v.1.39)</em>,
+<em>generics(v.0.1.3)</em>, <em>vctrs(v.0.4.1)</em>,
+<em>sass(v.0.4.0)</em>, <em>grid(v.4.0.5)</em>,
+<em>tidyselect(v.1.1.2)</em>, <em>glue(v.1.6.2)</em>,
+<em>R6(v.2.5.1)</em>, <em>fansi(v.1.0.3)</em>,
+<em>rmarkdown(v.2.11)</em>, <em>pander(v.0.6.3)</em>,
+<em>tidyr(v.1.2.0)</em>, <em>purrr(v.0.3.4)</em>,
+<em>magrittr(v.2.0.3)</em>, <em>scales(v.1.2.0)</em>,
+<em>htmltools(v.0.5.1.1)</em>, <em>assertthat(v.0.2.1)</em>,
+<em>colorspace(v.2.0-3)</em>, <em>utf8(v.1.2.2)</em>,
+<em>stringi(v.1.7.8)</em>, <em>munsell(v.0.5.0)</em> and
+<em>cachem(v.1.0.5)</em></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
