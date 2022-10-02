@@ -1,0 +1,121 @@
+﻿TA,category,phase,total_phase_transitions,POS,SE
+Oncology,No biomarker,Phase 1 to 2,9349,28,0.5
+Oncology,With biomarker,Phase 1 to 2,1136,43.5,1.5
+Oncology,All,Phase 1 to 2,10485,29.7,0.4
+Metabolic/endocrinology,No biomarker,Phase 1 to 2,1532,44.5,1.3
+Metabolic/endocrinology,With biomarker,Phase 1 to 2,7,57.1,18.7
+Metabolic/endocrinology,All,Phase 1 to 2,1539,44.6,1.3
+Cardiovascular,No biomarker,Phase 1 to 2,1241,39.6,1.4
+Cardiovascular,With biomarker,Phase 1 to 2,7,85.7,13.2
+Cardiovascular,All,Phase 1 to 2,1248,39.9,1.4
+CNS,No biomarker,Phase 1 to 2,2181,40.4,1.1
+CNS,With biomarker,Phase 1 to 2,42,54.8,7.7
+CNS,All,Phase 1 to 2,2223,40.7,1
+Autoimmune/inflammation,No biomarker,Phase 1 to 2,2506,38.9,1
+Autoimmune/inflammation,With biomarker,Phase 1 to 2,9,55.6,16.6
+Autoimmune/inflammation,All,Phase 1 to 2,2515,39,1
+Genitourinary,No biomarker,Phase 1 to 2,359,34.3,2.5
+Genitourinary,With biomarker,Phase 1 to 2,5,80,17.9
+Genitourinary,All,Phase 1 to 2,364,34.9,2.5
+Infectious disease,No biomarker,Phase 1 to 2,1961,39.7,1.1
+Infectious disease,With biomarker,Phase 1 to 2,6,66.7,19.2
+Infectious disease,All,Phase 1 to 2,1967,39.8,1.1
+Ophthalmology,No biomarker,Phase 1 to 2,180,52.2,3.7
+Ophthalmology,With biomarker,Phase 1 to 2,1,0,0
+Ophthalmology,All,Phase 1 to 2,181,51.9,3.7
+Vaccines (infectious disease),No biomarker,Phase 1 to 2,733,40.8,1.8
+Vaccines (infectious disease),With biomarker,Phase 1 to 2,0,NA,NA
+Vaccines (infectious disease),All,Phase 1 to 2,733,40.8,1.8
+Overall,No biomarker,Phase 1 to 2,20042,34.7,0.3
+Overall,With biomarker,Phase 1 to 2,1213,44.5,1.4
+Overall,All,Phase 1 to 2,21255,35.2,0.3
+Oncology,No biomarker,Phase 2 to 3,4773,17.4,0.5
+Oncology,With biomarker,Phase 2 to 3,742,38.8,1.8
+Oncology,All,Phase 2 to 3,5515,20.3,0.5
+Metabolic/endocrinology,No biomarker,Phase 2 to 3,1438,33.9,1.2
+Metabolic/endocrinology,With biomarker,Phase 2 to 3,2,50,35.4
+Metabolic/endocrinology,All,Phase 2 to 3,1440,34,1.2
+Cardiovascular,No biomarker,Phase 2 to 3,1027,37.9,1.5
+Cardiovascular,With biomarker,Phase 2 to 3,5,100,0
+Cardiovascular,All,Phase 2 to 3,1032,38.2,1.5
+CNS,No biomarker,Phase 2 to 3,2050,30.2,1
+CNS,With biomarker,Phase 2 to 3,42,28.6,7
+CNS,All,Phase 2 to 3,2092,30.2,1
+Autoimmune/inflammation,No biomarker,Phase 2 to 3,2106,25.4,0.9
+Autoimmune/inflammation,With biomarker,Phase 2 to 3,14,35.7,12.8
+Autoimmune/inflammation,All,Phase 2 to 3,2120,25.5,0.9
+Genitourinary,No biomarker,Phase 2 to 3,287,28.9,2.7
+Genitourinary,With biomarker,Phase 2 to 3,0,NA,NA
+Genitourinary,All,Phase 2 to 3,287,28.9,2.7
+Infectious disease,No biomarker,Phase 2 to 3,1453,34.7,1.2
+Infectious disease,With biomarker,Phase 2 to 3,27,44.4,9.6
+Infectious disease,All,Phase 2 to 3,1480,34.9,1.2
+Ophthalmology,No biomarker,Phase 2 to 3,274,34.7,2.9
+Ophthalmology,With biomarker,Phase 2 to 3,3,33.3,27.2
+Ophthalmology,All,Phase 2 to 3,277,34.7,2.9
+Vaccines (infectious disease),No biomarker,Phase 2 to 3,761,32.9,1.7
+Vaccines (infectious disease),With biomarker,Phase 2 to 3,5,0,0
+Vaccines (infectious disease),All,Phase 2 to 3,766,32.6,1.7
+Overall,No biomarker,Phase 2 to 3,14169,26.8,0.4
+Overall,With biomarker,Phase 2 to 3,840,38.6,1.7
+Overall,All,Phase 2 to 3,15009,27.4,0.4
+Oncology,No biomarker,Phase 3 to approval,1159,33.6,1.4
+Oncology,With biomarker,Phase 3 to approval,77,63.6,5.5
+Oncology,All,Phase 3 to approval,1236,35.5,1.4
+Metabolic/endocrinology,No biomarker,Phase 3 to approval,1086,52,1.5
+Metabolic/endocrinology,With biomarker,Phase 3 to approval,15,20,10.3
+Metabolic/endocrinology,All,Phase 3 to approval,1101,51.6,1.5
+Cardiovascular,No biomarker,Phase 3 to approval,962,62.2,1.6
+Cardiovascular,With biomarker,Phase 3 to approval,2,100,0
+Cardiovascular,All,Phase 3 to approval,964,62.2,1.6
+CNS,No biomarker,Phase 3 to approval,1141,51.1,1.5
+CNS,With biomarker,Phase 3 to approval,15,53.3,12.9
+CNS,All,Phase 3 to approval,1156,51.1,1.5
+Autoimmune/inflammation,No biomarker,Phase 3 to approval,964,63.7,1.5
+Autoimmune/inflammation,With biomarker,Phase 3 to approval,5,60,21.9
+Autoimmune/inflammation,All,Phase 3 to approval,969,63.7,1.5
+Genitourinary,No biomarker,Phase 3 to approval,212,66.5,3.2
+Genitourinary,With biomarker,Phase 3 to approval,0,NA,NA
+Genitourinary,All,Phase 3 to approval,212,66.5,3.2
+Infectious disease,No biomarker,Phase 3 to approval,1069,75.1,1.3
+Infectious disease,With biomarker,Phase 3 to approval,9,100,0
+Infectious disease,All,Phase 3 to approval,1078,75.3,1.3
+Ophthalmology,No biomarker,Phase 3 to approval,207,74.9,3
+Ophthalmology,With biomarker,Phase 3 to approval,0,NA,NA
+Ophthalmology,All,Phase 3 to approval,207,74.9,3
+Vaccines (infectious disease),No biomarker,Phase 3 to approval,609,85.4,1.4
+Vaccines (infectious disease),With biomarker,Phase 3 to approval,0,NA,NA
+Vaccines (infectious disease),All,Phase 3 to approval,609,85.4,1.4
+Overall,No biomarker,Phase 3 to approval,7409,59,0.6
+Overall,With biomarker,Phase 3 to approval,123,60.2,4.4
+Overall,All,Phase 3 to approval,7532,59,0.6
+Oncology,No biomarker,Overall,NA,1.6,0.2
+Oncology,With biomarker,Overall,NA,10.7,1.9
+Oncology,All,Overall,NA,2.1,0.2
+Metabolic/endocrinology,No biomarker,Overall,NA,7.9,0.8
+Metabolic/endocrinology,With biomarker,Overall,NA,5.7,13.9
+Metabolic/endocrinology,All,Overall,NA,7.8,0.8
+Cardiovascular,No biomarker,Overall,NA,9.3,1
+Cardiovascular,With biomarker,Overall,NA,85.7,13.2
+Cardiovascular,All,Overall,NA,9.5,1
+CNS,No biomarker,Overall,NA,6.2,0.6
+CNS,With biomarker,Overall,NA,8.3,6.4
+CNS,All,Overall,NA,6.3,0.6
+Autoimmune/inflammation,No biomarker,Overall,NA,6.3,0.6
+Autoimmune/inflammation,With biomarker,Overall,NA,11.9,16.8
+Autoimmune/inflammation,All,Overall,NA,6.3,0.6
+Genitourinary,No biomarker,Overall,NA,6.6,1.5
+Genitourinary,With biomarker,Overall,NA,NA,NA
+Genitourinary,All,Overall,NA,6.7,1.5
+Infectious disease,No biomarker,Overall,NA,10.4,0.9
+Infectious disease,With biomarker,Overall,NA,29.6,16.8
+Infectious disease,All,Overall,NA,10.5,0.9
+Ophthalmology,No biomarker,Overall,NA,13.6,2.8
+Ophthalmology,With biomarker,Overall,NA,NA,NA
+Ophthalmology,All,Overall,NA,13.5,2.8
+Vaccines (infectious disease),No biomarker,Overall,NA,11.4,1.3
+Vaccines (infectious disease),With biomarker,Overall,NA,NA,NA
+Vaccines (infectious disease),All,Overall,NA,11.4,1.3
+Overall,No biomarker,Overall,NA,5.5,0.2
+Overall,With biomarker,Overall,NA,10.3,1.6
+Overall,All,Overall,NA,5.7,0.2

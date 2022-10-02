@@ -7,7 +7,16 @@
     <description>Alice Walsh's personal website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 04 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Clinical Trial Visualizations</title>
+      <dc:creator>Alice Walsh</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-10-02-replotting-clinical-trials</link>
+      <description>Re-analysis of publicly-available clinical trial data</description>
+      <guid>https://awalsh17.github.io/posts/2022-10-02-replotting-clinical-trials</guid>
+      <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://awalsh17.github.io/posts/2022-10-02-replotting-clinical-trials/replotting-clinical-trials_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Which pharma companies tweet about data science?</title>
       <dc:creator>Alice Walsh</dc:creator>
