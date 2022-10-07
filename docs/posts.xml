@@ -7,7 +7,16 @@
     <description>Alice Walsh's personal website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Data Jobs in Pharma</title>
+      <dc:creator>Alice Walsh</dc:creator>
+      <link>https://awalsh17.github.io/posts/2022-10-07-pharma-data-jobs</link>
+      <description>Who is hiring data scientists? I mined some job descriptions to look for trends.</description>
+      <guid>https://awalsh17.github.io/posts/2022-10-07-pharma-data-jobs</guid>
+      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://awalsh17.github.io/posts/2022-10-07-pharma-data-jobs/pharma-data-jobs_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Clinical Trial Visualizations</title>
       <dc:creator>Alice Walsh</dc:creator>

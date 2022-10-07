@@ -15,9 +15,9 @@
 
 html {
   /*-- Main font sizes --*/
-  --title-size:      50px;
+  --title-size:      40px;
   --body-size:       1.06rem;
-  --code-size:       14px;
+  --code-size:       0.9rem;
   --aside-size:      12px;
   --fig-cap-size:    13px;
   /*-- Main font colors --*/

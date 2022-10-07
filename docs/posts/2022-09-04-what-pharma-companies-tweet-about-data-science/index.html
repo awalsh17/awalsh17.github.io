@@ -15,7 +15,6 @@
   }
   </style>
 <script async defer data-website-id="abf17d3b-017c-42dc-b522-25935207affa" src="https://awalsh17-personal-site.herokuapp.com/umami.js"></script>
-
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
 
@@ -2155,9 +2154,9 @@ d-appendix {
 
 html {
   /*-- Main font sizes --*/
-  --title-size:      50px;
+  --title-size:      40px;
   --body-size:       1.06rem;
-  --code-size:       14px;
+  --code-size:       0.9rem;
   --aside-size:      12px;
   --fig-cap-size:    13px;
   /*-- Main font colors --*/
@@ -2592,12 +2591,12 @@ words.</p>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>count_tweets_by_word</span><span class='op'>(</span><span class='va'>ph_tweets</span>, search_words <span class='op'>=</span> <span class='st'>"[Dd]ata"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'>DT</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/DT/man/datatable.html'>datatable</a></span><span class='op'>(</span>rownames <span class='op'>=</span> <span class='cn'>FALSE</span>,
-                colnames <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Twitter Handle"</span>, <span class='st'>"Tweets w/ word"</span>,
-                             <span class='st'>"Tweets w/o word"</span>, <span class='st'>"Percent w/ word"</span><span class='op'>)</span><span class='op'>)</span>
+                colnames <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Twitter Handle"</span>, <span class='st'>"Tweets w/ words"</span>,
+                             <span class='st'>"Tweets w/o words"</span>, <span class='st'>"Percent w/ words"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <div id="htmlwidget-4d78b2e5a8ec16c08ad2" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4d78b2e5a8ec16c08ad2">{"x":{"filter":"none","data":[["RecursionPharma","Roche","JanssenGlobal","TakedaPharma","bmsnews|ScienceAtBMS","abbvie","Novartis|NovartisScience","AstraZeneca","Sanofi|SanofiScience","LillyPad","Merck","GSK","pfizer"],[251,403,248,154,162,128,224,106,170,84,82,77,67],[1518,2717,2426,2863,3302,2947,5178,2770,4922,2972,2970,2882,2995],["14.189%","12.917%","9.274%","5.104%","4.677%","4.163%","4.147%","3.686%","3.339%","2.749%","2.687%","2.602%","2.188%"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Twitter Handle<\/th>\n      <th>Tweets w/ word<\/th>\n      <th>Tweets w/o word<\/th>\n      <th>Percent w/ word<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-4d78b2e5a8ec16c08ad2">{"x":{"filter":"none","data":[["RecursionPharma","Roche","JanssenGlobal","TakedaPharma","bmsnews|ScienceAtBMS","abbvie","Novartis|NovartisScience","AstraZeneca","Sanofi|SanofiScience","LillyPad","Merck","GSK","pfizer"],[251,403,248,154,162,128,224,106,170,84,82,77,67],[1518,2717,2426,2863,3302,2947,5178,2770,4922,2972,2970,2882,2995],["14.189%","12.917%","9.274%","5.104%","4.677%","4.163%","4.147%","3.686%","3.339%","2.749%","2.687%","2.602%","2.188%"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Twitter Handle<\/th>\n      <th>Tweets w/ words<\/th>\n      <th>Tweets w/o words<\/th>\n      <th>Percent w/ words<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>We can get more specific and count tweets with the key words “data
 science”, “AI”, and “machine learning”. I went ahead and included
@@ -2607,16 +2606,17 @@ word.</p>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>search_words</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"[Dd]ata [Ss]cience"</span>,
                   <span class='st'>"[Mm]achine [Ll]earning"</span>,
-                  <span class='st'>"[ #]AI "</span>,
+                  <span class='st'>"[ #]AI[^(DAB)]"</span>,
                   <span class='st'>"[Ss]tatistics"</span><span class='op'>)</span>
+
 <span class='fu'>count_tweets_by_word</span><span class='op'>(</span><span class='va'>ph_tweets</span>, search_words <span class='op'>=</span> <span class='va'>search_words</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'>DT</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/DT/man/datatable.html'>datatable</a></span><span class='op'>(</span>rownames <span class='op'>=</span> <span class='cn'>FALSE</span>,
-                colnames <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Twitter Handle"</span>, <span class='st'>"Tweets w/ word"</span>,
-                             <span class='st'>"Tweets w/o word"</span>, <span class='st'>"Percent w/ word"</span><span class='op'>)</span><span class='op'>)</span>
+                colnames <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Twitter Handle"</span>, <span class='st'>"Tweets w/ words"</span>,
+                             <span class='st'>"Tweets w/o words"</span>, <span class='st'>"Percent w/ words"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 <div id="htmlwidget-8983d9f4afcce57cc11b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8983d9f4afcce57cc11b">{"x":{"filter":"none","data":[["RecursionPharma","AstraZeneca","JanssenGlobal","GSK","Novartis|NovartisScience","Roche","bmsnews|ScienceAtBMS","TakedaPharma","Sanofi|SanofiScience","abbvie","Merck","LillyPad","pfizer"],[209,46,40,35,37,19,21,16,26,8,4,3,2],[1560,2830,2634,2924,5365,3101,3443,3001,5066,3067,3048,3053,3060],["11.8146%","1.5994%","1.4959%","1.1828%","0.6849%","0.6090%","0.6062%","0.5303%","0.5106%","0.2602%","0.1311%","0.0982%","0.0653%"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Twitter Handle<\/th>\n      <th>Tweets w/ word<\/th>\n      <th>Tweets w/o word<\/th>\n      <th>Percent w/ word<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-8983d9f4afcce57cc11b">{"x":{"filter":"none","data":[["RecursionPharma","AstraZeneca","JanssenGlobal","GSK","Novartis|NovartisScience","bmsnews|ScienceAtBMS","Roche","TakedaPharma","Sanofi|SanofiScience","abbvie","Merck","LillyPad","pfizer"],[247,51,42,45,42,26,22,20,30,10,5,3,3],[1522,2825,2632,2914,5360,3438,3098,2997,5062,3065,3047,3053,3059],["13.96269%","1.77330%","1.57068%","1.52078%","0.77749%","0.75058%","0.70513%","0.66291%","0.58916%","0.32520%","0.16383%","0.09817%","0.09798%"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Twitter Handle<\/th>\n      <th>Tweets w/ words<\/th>\n      <th>Tweets w/o words<\/th>\n      <th>Percent w/ words<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>Let’s check out some example tweets. Pfizer only had two data science
 tweets in our search:</p>
@@ -2701,11 +2701,14 @@ Show code
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>tweets <span class='op'>=</span> <span class='va'>tweets</span><span class='op'>[</span><span class='va'>text_pos</span><span class='op'>]</span> <span class='op'>/</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>tweets</span><span class='op'>)</span>,
             .groups <span class='op'>=</span> <span class='st'>"drop"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>year</span>, y<span class='op'>=</span><span class='va'>tweets</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substr.html'>substr</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span>, <span class='fl'>1</span>, <span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>year</span> <span class='op'>&gt;</span> <span class='fl'>2016</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span>, y <span class='op'>=</span> <span class='va'>tweets</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/percent_format.html'>percent_format</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Prevalence of tweets about data science"</span>,
        subtitle <span class='op'>=</span> <span class='st'>"Recent tweets from 12 pharma companies"</span>,
-       y <span class='op'>=</span> <span class='st'>"Fraction of all tweets"</span><span class='op'>)</span>
+       y <span class='op'>=</span> <span class='st'>"Percent of all tweets"</span>, x <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
@@ -2734,11 +2737,12 @@ Show code
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>top_cos</span> <span class='op'>&lt;-</span> <span class='fu'>count_tweets_by_word</span><span class='op'>(</span><span class='va'>ph_tweets</span>,
                                 search_words <span class='op'>=</span> <span class='va'>search_words</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>n_pos</span> <span class='op'>&gt;</span> <span class='fl'>9</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/pull.html'>pull</a></span><span class='op'>(</span><span class='va'>screen_name</span><span class='op'>)</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>n_pos</span> <span class='op'>&gt;</span> <span class='fl'>10</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/pull.html'>pull</a></span><span class='op'>(</span><span class='va'>screen_name</span><span class='op'>)</span>
 
-<span class='va'>ph_tweets</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+<span class='va'>tweet_by_co</span> <span class='op'>&lt;-</span> <span class='va'>ph_tweets</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='co'># filter for our interesting tweets</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>screen_name</span> <span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span> <span class='va'>top_cos</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>screen_name</span> <span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span> <span class='va'>top_cos</span>,
+         <span class='va'>screen_name</span> <span class='op'>!=</span> <span class='st'>"RecursionPharma"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>text_filt <span class='op'>=</span>
            <span class='fu'>stringr</span><span class='fu'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='va'>text</span>, <span class='st'>"https?://t.co/[A-Za-z\\d]+|&amp;amp;"</span>, <span class='st'>""</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'>stringr</span><span class='fu'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>text_filt</span>,
@@ -2749,12 +2753,27 @@ Show code
            <span class='va'>screen_name</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>tweets <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span>,
             .groups <span class='op'>=</span> <span class='st'>"drop"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>year</span>, y<span class='op'>=</span><span class='va'>tweets</span>, color <span class='op'>=</span> <span class='va'>screen_name</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='op'>~</span><span class='va'>screen_name</span>, scales <span class='op'>=</span> <span class='st'>"free_y"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Number of tweets about data science by pharma company"</span>,
-       y <span class='op'>=</span> <span class='st'>"Number"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substr.html'>substr</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span>, <span class='fl'>1</span>, <span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>tweet_by_co</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, y <span class='op'>=</span> <span class='va'>tweets</span>, color <span class='op'>=</span> <span class='va'>screen_name</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>show.legend <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>group <span class='op'>=</span> <span class='va'>screen_name</span><span class='op'>)</span>, show.legend <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_text.html'>geom_text</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>label <span class='op'>=</span> <span class='va'>screen_name</span>, y <span class='op'>=</span> <span class='va'>tweets</span>, color <span class='op'>=</span> <span class='va'>screen_name</span><span class='op'>)</span>,
+            inherit.aes <span class='op'>=</span> <span class='cn'>FALSE</span>,
+            data <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>tweet_by_co</span>, <span class='va'>year</span> <span class='op'>==</span> <span class='st'>"2022"</span><span class='op'>)</span>,
+            x <span class='op'>=</span> <span class='fl'>2022.1</span>,
+            hjust <span class='op'>=</span> <span class='fl'>0</span>, check_overlap <span class='op'>=</span> <span class='cn'>TRUE</span>,
+            position <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/position_nudge.html'>position_nudge</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span>,
+            family <span class='op'>=</span> <span class='st'>"Avenir"</span>,
+            show.legend <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_x_continuous</a></span><span class='op'>(</span>expand <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/expansion.html'>expansion</a></span><span class='op'>(</span>add <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.1</span>, <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>,
+                     breaks <span class='op'>=</span> <span class='fl'>2015</span><span class='op'>:</span><span class='fl'>2022</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>30</span>, <span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Number of tweets about data science"</span>,
+       y <span class='op'>=</span> <span class='st'>"Tweets"</span>, x <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>panel.grid.minor.x <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
+        panel.grid.major.x <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
@@ -2768,6 +2787,8 @@ than others.</p>
 <p>I hope to post more on this topic by looking at job descriptions,
 LinkedIn, and clinical trial data to examine more deeply the impact of
 data-intensive work on pharma R&amp;D.</p>
+<p><em>This post was updated 2022-10-07 to improve a couple of plots
+that I didn’t like and improve the regex.</em></p>
 <h3 class="appendix" id="sessioninfo">sessionInfo</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2789,7 +2810,7 @@ en_US.UTF-8||en_US.UTF-8||en_US.UTF-8||C||en_US.UTF-8||en_US.UTF-8</p>
 <em>bslib(v.0.2.5.1)</em>, <em>pander(v.0.6.3)</em>,
 <em>purrr(v.0.3.4)</em>, <em>lattice(v.0.20-41)</em>,
 <em>colorspace(v.2.0-3)</em>, <em>vctrs(v.0.4.1)</em>,
-<em>generics(v.0.1.3)</em>, <em>htmltools(v.0.5.1.1)</em>,
+<em>generics(v.0.1.3)</em>, <em>htmltools(v.0.5.3)</em>,
 <em>SnowballC(v.0.7.0)</em>, <em>yaml(v.2.3.5)</em>,
 <em>utf8(v.1.2.2)</em>, <em>rlang(v.1.0.4)</em>,
 <em>jquerylib(v.0.1.4)</em>, <em>pillar(v.1.8.0)</em>,
@@ -2808,7 +2829,7 @@ en_US.UTF-8||en_US.UTF-8||en_US.UTF-8||C||en_US.UTF-8||en_US.UTF-8</p>
 <em>distill(v.1.3)</em>, <em>askpass(v.1.1)</em>,
 <em>digest(v.0.6.29)</em>, <em>stringi(v.1.7.8)</em>,
 <em>grid(v.4.0.5)</em>, <em>cli(v.3.3.0)</em>, <em>tools(v.4.0.5)</em>,
-<em>magrittr(v.2.0.3)</em>, <em>sass(v.0.4.0)</em>,
+<em>magrittr(v.2.0.3)</em>, <em>sass(v.0.4.1)</em>,
 <em>tibble(v.3.1.8)</em>, <em>janeaustenr(v.0.1.5)</em>,
 <em>crayon(v.1.5.1)</em>, <em>tidyr(v.1.2.0)</em>,
 <em>pkgconfig(v.2.0.3)</em>, <em>downlit(v.0.4.0)</em>,
