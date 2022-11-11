@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2022-11-09-rpharma2022/",
+    "title": "R in Pharma Conference Talk 2022",
+    "description": "I co-presented at R/Pharma 2022 with Katie Igartua.",
+    "author": [
+      {
+        "name": "Alice Walsh",
+        "url": {}
+      }
+    ],
+    "date": "2022-11-09",
+    "categories": [],
+    "contents": "\nKatie Igartua, PhD (Sr Director, Computational Biology at Tempus) and\nI presented the opening keynote at R/Pharma 2022 on October 8th.\nThanks to the organizers for having me and making this a very\npositive experience! Double thanks to Katie for agreeing to take this on\nwith me and then brainstorming a (hopefully) interesting topic.\nI will update here when a recording goes up on YouTube. Until then,\nhere is a link to the slides\nIf you want to get in touch to talk more about ideas to engage to\nhelp people get hired and find good people in the R/Pharma community, do\nreach out. The best way to get in touch at the moment is probably LinkedIn.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-11-10T13:32:11-05:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-10-07-pharma-data-jobs/",
     "title": "Data Jobs in Pharma",
     "description": "Who is hiring data scientists? I mined some job descriptions to look for trends.",

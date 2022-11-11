@@ -1,0 +1,20 @@
+---
+title: "R in Pharma Conference Talk 2022"
+description: |
+  I co-presented at R/Pharma 2022 with Katie Igartua.
+author:
+  - name: Alice Walsh
+    url: {}
+date: 2022-11-09
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Katie Igartua, PhD (Sr Director, Computational Biology at Tempus) and I presented the opening keynote at R/Pharma 2022 on October 8th.
+
+Thanks to the organizers for having me and making this a very positive experience! Double thanks to Katie for agreeing to take this on with me and then brainstorming a (hopefully) interesting topic.
+
+I will update here when a recording goes up on YouTube. Until then, here is a link to the [slides](./slides/RPharma2022_walsh_igartua.pdf)
+
+If you want to get in touch to talk more about ideas to engage to help people get hired and find good people in the R/Pharma community, do reach out. The best way to get in touch at the moment is probably [LinkedIn]().

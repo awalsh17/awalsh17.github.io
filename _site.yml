@@ -4,6 +4,7 @@ description: |
   Alice Walsh's personal website
 output_dir: "docs"
 base_url: https://awalsh17.github.io
+repository_url: https://github.com/awalsh17/awalsh17.github.io
 navbar:
   right:
     - text: "Home"
@@ -18,5 +19,9 @@ navbar:
       href: https://www.linkedin.com/in/alice-walsh/
     - icon: fa fa-twitter
       href: https://twitter.com/sciencealice
+    - icon: fa fa-rss
+      href: posts.xml
 output: distill::distill_article
 theme: theme.css
+rss:
+  full_content: true
