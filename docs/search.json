@@ -5,21 +5,21 @@
       "title": "About me",
       "author": [],
       "contents": "\n\n\n\nI am a computational biologist/data\nscientist/bioinformatician/bioengineer that enjoys learning from complex\nbiological data sets and collaborating. (My pronouns are she/her.)\nI am currently VP of Translational Research at Pathos. My prior professional experience\nincludes roles at Bristol Myers Squibb and Janssen. My projects are\nbroadly at the intersection of molecular data and drug development,\nincluding leading teams that have worked on all stages of drug\ndevelopment, from target identification through approval. Google\nScholar page.\nI am also a founding organizer of the Philadelphia chapter of R-Ladies.\nI live in the Philadelphia area. I spend my free time watching\ntelevision and improving my artistic skills through painting, quilting,\nneedlepoint, and other creative pursuits.\nYou can find me online on Twitter, LinkedIn, and GitHub.\n\n\n\n",
-      "last_modified": "2022-11-10T13:34:11-05:00"
+      "last_modified": "2023-01-19T07:20:37-05:00"
     },
     {
       "path": "index.html",
       "title": "Alice Walsh, PhD",
       "author": [],
       "contents": "\nWelcome! 👋\nI work in drug development, where I am excited about the potential of\ncomputational research to yield breakthroughs for patients. This is my\npersonal site where I am experimenting with posting various things that\nnormally stay in my notes app.\nMore about me\n\n\n\n",
-      "last_modified": "2022-11-10T13:34:11-05:00"
+      "last_modified": "2023-01-19T07:20:38-05:00"
     },
     {
       "path": "posts.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-11-10T13:34:12-05:00"
+      "last_modified": "2023-01-19T07:20:38-05:00"
     }
   ],
   "collections": ["posts/posts.json"]
