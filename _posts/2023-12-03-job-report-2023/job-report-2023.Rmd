@@ -1,0 +1,110 @@
+---
+title: "Data Science Jobs in Pharma in 2023"
+description: |
+  The job market is tough right now.
+author:
+  - name: Alice Walsh
+    url: {}
+date: 2023-12-03
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+As many people know too well, it has not been a good year for jobs in pharma and biotech. As STAT News [reported](https://www.statnews.com/2023/11/27/biotech-job-market-slump/), it is hard out there for job seekers. 
+
+I have previously done some data mining for [pharma job postings](https://awalsh17.github.io/posts/2022-10-07-pharma-data-jobs/), so I went ahead and browsed more recent data to understand whether data science jobs might have been affected more or less than other roles. 
+
+My methods are imperfect, but I focused on top pharma and jobs descriptions that focused on data science and related-skills. 
+
+### Overall, jobs are down
+
+I used data from November 2022, February 2023, and November 2023 (when I downloaded the job descriptions).
+
+```{r code_folding=TRUE}
+library(dplyr)     # data wrangling
+library(gt)        # make nice tables
+library(ggplot2)   # nice plots
+
+# plot theme
+theme_set(theme_minimal(base_family = "Avenir"))
+# set seed
+set.seed(1203)
+
+data_files <- c("2022-11-03/combined_data2.csv",
+                "2023-02-20/combined_data2.csv",
+                "2023-11-21/combined_data2.csv")
+jobs <- purrr::map_dfr(
+  file.path("~/Documents/code/job_description_collector/data/", data_files), 
+  read.csv, .id = "id")
+date_map <- data.frame(
+  id = as.character(1:length(data_files)),
+  date = dirname(data_files)
+)
+jobs <- jobs |> 
+  left_join(date_map, by = "id")
+
+# require distinct descriptions
+jobs <- distinct(jobs,
+                 date, company, title, description, .keep_all = TRUE) |> 
+  add_count(date, company, name = "n_company")
+```
+
+**Looking at all jobs, we can see that the postings have decreased from February to November.**
+
+```{r code_folding=TRUE}
+jobs |> 
+  distinct(date, n_company, company) |> 
+  ggplot(aes(date, n_company, group = company)) + 
+  geom_line() +
+  geom_point(aes(color = company)) + 
+  coord_cartesian(ylim = c(0, NA)) + 
+  labs(title = "Total jobs per company",
+       y = "Jobs", x = "Date")
+```
+
+### There are few data science jobs
+
+Next, I labeled jobs as "data jobs" if the descriptions had R or data science in them.
+Most the jobs are not "data jobs," so to look at the trends, I normalize the values to the first data point (November, 2022).
+
+Back in November of 2022, there were 232 jobs that mentioned R or "data science". In November of 2023, that is down to only 66 jobs. 
+
+I also plotted "chemistry" and "sales" as comparisons. It seems that some types of roles have been hit harder than others!
+
+```{r code_folding=TRUE}
+jobs_w_type <- mutate(jobs, 
+               job_type = case_when(
+                 grepl("[^(Maurice)] R[\\., ][^(&N.Ph)]", description) |
+                   grepl("[Dd]ata [Ss]science", description) ~ "data",
+                 grepl("[Cc]hemistry", description) ~ "chemistry",
+                 grepl("[Ss]ales", description) ~ "sales",
+                 TRUE ~ "other")
+) |> 
+  count(job_type, date) |> 
+  group_by(job_type) |> 
+  mutate(fraction = n / n[date == "2022-11-03"]) 
+
+jobs_w_type |> 
+  ggplot(aes(date, fraction, group = job_type, color = job_type)) + 
+  geom_line() +
+  geom_point() + 
+  coord_cartesian(ylim = c(0, NA)) + 
+  scale_y_continuous(labels = scales::percent) + 
+  scale_color_manual(values = c("#87B8DA", "firebrick4", "#87B8DA", "#87B8DA")) + 
+  geom_text(aes(label = job_type), nudge_x = 0.1, hjust = 0,
+            data = filter(jobs_w_type, date == "2023-11-21"),
+            family = "Avenir") + 
+  labs(title = "Jobs by type",
+       y = NULL, x = "Date",
+       color = "Job type") + 
+  theme(legend.position = "none")
+```
+
+Good luck out there job seekers! If anyone is looking for job search advice, feel free to reach out to see if I can help. 
+
+### sessionInfo {.appendix}
+
+```{r}
+pander::pander(sessionInfo())
+```
