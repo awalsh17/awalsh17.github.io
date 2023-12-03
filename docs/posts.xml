@@ -7,7 +7,16 @@
     <description>Alice Walsh's personal website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 09 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Data Science Jobs in Pharma in 2023</title>
+      <dc:creator>Alice Walsh</dc:creator>
+      <link>https://awalsh17.github.io/posts/2023-12-03-job-report-2023</link>
+      <description>The job market is tough right now.</description>
+      <guid>https://awalsh17.github.io/posts/2023-12-03-job-report-2023</guid>
+      <pubDate>Sun, 03 Dec 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://awalsh17.github.io/posts/2023-12-03-job-report-2023/job-report-2023_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>R in Pharma Conference Talk 2022</title>
       <dc:creator>Alice Walsh</dc:creator>
