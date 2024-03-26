@@ -1,0 +1,59 @@
+---
+title: "Improving Your Job Search"
+description: |
+  My common advice for people looking for comp bio jobs.
+author:
+  - name: Alice Walsh
+    url: {}
+date: 2024-03-26
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Recently, I have been talking with some job seekers and interviewing for a couple of positions on my team. I was reminded how difficult it is for job seekers to get noticed and, on the flip side, for hiring managers to identify relevant candidates from a pile of candidates. I wanted to write down a few ideas in case they could be helpful.
+
+### **How to apply**
+
+Liberally. Interviews are good practice. You should not waste people's time if you have no intention of accepting a new role, but if you are seeking a job, don't count yourself out by not even applying.
+
+Introductions and talking to people you know at a company is absolutely a good idea. I have heard the cynical view that no one gets hired that was not referred. That has not been my experience. At least at established companies, most people hired are not friends or connections. However, the current climate (March 2024) is tough for applicants. Companies are getting way more candidates than they could review. Any help you can get to get your resume even seen seems worth the effort.
+
+### **Resumés**
+
+There is already more advice than you could use on the internet about writing a good resume. Here is my approach.
+
+-   I like to see what people have accomplished (results). ***Writing clear actions*** you took in a past role is more exciting than a job title, location, or time frame.
+-   People who ***bring their experience to life*** in their resumes and cover letters stand out. Add some details that will be interesting and specific to you.
+-   Please ***include links*** to GitHub or other places where I can see your work. If you don't have a GitHub or LinkedIn account, that is a red flag.
+-   I can often tell when a resume is customized for a job - do this! You can ***highlight relevant experience*** for the job, and it is an opportunity to differentiate yourself.
+-   I like cover letters. If there are many applicants, one of the easiest ways to differentiate yourself is by personalizing your message to the application and demonstrating genuine interest.
+-   A "skills" section has little value to me. It all looks the same and doesn't tell me anything meaningful, so part of the interview process has to involve a deeper dive into past experience.
+
+### **When to look for a job**
+
+While employers often have flexibility, it is best to be in active interviews when you can start the role within six weeks. A hiring manager would like the new hire to begin as soon as possible. A complete interview process, from reading your CV to extending an offer, could be as short as two weeks or as long as six weeks.
+
+This advice is most salient to people completing full-time degrees. I see many applications from people who will not graduate for several months. I completely understand the need to look for a job while completing your degree, but the timeline has to make sense.
+
+The timeline gets fuzzier if you are more established in your career. You should network and strategize to find your next role, which can take a long time (people say one to two years) to build connections and learn about possible future opportunities.
+
+### **How to interview**
+
+Be prepared! I cannot emphasize enough that the interview process is often less about how you answer our questions and more about ***how you ask us questions***. I frequently hear that hiring managers are looking for curiosity, passion, and potential. Having good questions about the company and the role can set you apart. Here is my advice: Ask people you have worked with, or you know who hire people about the best questions they have been asked by candidates. Ask your favorite chat LLM for inspiration, too.
+
+The other recommendation I have for candidates is about responsiveness. If at all possible, do not delay replying to emails about scheduling. I will read this as a passive "no thanks." It's fine, but I prefer a polite decline rather than no response. If you will be traveling or unresponsive, send a note to that effect. It is extremely obvious how interested a candidate is based on how quickly they reply to schedule interviews or answer questions.
+
+On a related note, fewer and fewer people send thank-you notes after interviews, so I do not consider that when forming an opinion on a candidate. I don't really even notice anymore. If I were interviewing, I would send a thank you. I don't see any downside, so why not?
+
+### **Disclaimers and an offer**
+
+A caveat: My work has been entirely in the life sciences, biotech, and pharma space, and I don't know how generalizable this perspective is.
+
+In the past decade, I have participated in many interviews at large and small companies (easily in the hundreds). Feel free to reach out if you are applying for roles in biotech and pharma and are interested in talking about it. I have set aside some time to talk about these sorts of issues. I would be happy to provide resume advice or answer your questions about interviewing.
+
+### sessionInfo {.appendix}
+
+```{r}
+pander::pander(sessionInfo())
+```
