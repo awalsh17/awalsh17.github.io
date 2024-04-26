@@ -7,7 +7,101 @@
     <description>Alice Walsh's personal website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 26 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>What I am reading: Q1 2024</title>
+      <dc:creator>Alice Walsh</dc:creator>
+      <link>https://awalsh17.github.io/posts/2024-04-26-what-i-am-reading-q1-2024</link>
+      <description>
+
+
+&lt;p&gt;Keeping up with biotech, tech, and techbio is exhausting. It seems
+like every other person has a substack.&lt;/p&gt;
+&lt;p&gt;Here are articles or newsletters that have gone around in Q1 2024
+that I have found valuable. I would love some new recommendations!&lt;/p&gt;
+&lt;h3 id="general-newsletters-or-blogs"&gt;General newsletters or blogs:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bitsinbio newsletter: &lt;a href="https://bitsinbio.substack.com/"
+class="uri"&gt;https://bitsinbio.substack.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Abigail Haddad’s substack on LLMs: &lt;a
+href="https://presentofcoding.substack.com/"
+class="uri"&gt;https://presentofcoding.substack.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Vicki Boykis is always a good read: &lt;a
+href="https://vickiboykis.com/"
+class="uri"&gt;https://vickiboykis.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Decoding bio is from a group of investors: &lt;a
+href="https://www.decodingbio.com/"
+class="uri"&gt;https://www.decodingbio.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Waseem Daher, startup real talk: &lt;a
+href="https://waseem.substack.com/"
+class="uri"&gt;https://waseem.substack.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="single-posts-or-articles-that-were-interesting"&gt;Single posts or
+articles that were interesting:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+href="https://www.aibiodesign.com/p/selling-ai-products-services-to-big"&gt;Selling
+AI Products and Services to Big Pharma&lt;/a&gt; (Brandon White)&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf"&gt;Rules of
+ML&lt;/a&gt; (Martin Zinkevich):&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://www.cell.com/cell/fulltext/S0092-8674(24)00304-0"&gt;Problem
+choice and decision trees in science and engineering&lt;/a&gt; (note: the
+right questions are the hard - part, not the right solutions)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cthoyt.com/2020/04/28/history-of-bel.html"&gt;An
+Incomplete History of Selventa and the Biological Expression Language
+(BEL)&lt;/a&gt; (Charles Tapley - Hoyt)
+&lt;ul&gt;
+&lt;li&gt;I don’t know how I found this, but I remember Selventa, and this is
+fascinating.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://atelfo.github.io/2024/04/01/biotech-questions.html"&gt;Some
+questions about biotech that I find interesting&lt;/a&gt; (Alex Telford)&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://www.biorxiv.org/content/10.1101/2024.03.17.585426v1.full"&gt;A
+deep profile of gene expression across 18 human cancers&lt;/a&gt; (Wei Qiu et
+al.)
+&lt;ul&gt;
+&lt;li&gt;I like latent variables&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.nature.com/articles/d41586-024-00725-1"&gt;No
+installation required: how WebAssembly is changing scientific
+computing&lt;/a&gt; (By Jeffrey M. Perkel)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="appendix" id="sessioninfo"&gt;sessionInfo&lt;/h3&gt;
+&lt;pre class="r"&gt;&lt;code&gt;pander::pander(sessionInfo())&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;R version 4.3.0 (2023-04-21)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Platform:&lt;/strong&gt; aarch64-apple-darwin20 (64-bit)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;locale:&lt;/strong&gt;
+en_US.UTF-8||en_US.UTF-8||en_US.UTF-8||C||en_US.UTF-8||en_US.UTF-8&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;attached base packages:&lt;/strong&gt; &lt;em&gt;stats&lt;/em&gt;,
+&lt;em&gt;graphics&lt;/em&gt;, &lt;em&gt;grDevices&lt;/em&gt;, &lt;em&gt;utils&lt;/em&gt;,
+&lt;em&gt;datasets&lt;/em&gt;, &lt;em&gt;methods&lt;/em&gt; and &lt;em&gt;base&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;loaded via a namespace (and not attached):&lt;/strong&gt;
+&lt;em&gt;vctrs(v.0.6.4)&lt;/em&gt;, &lt;em&gt;cli(v.3.6.1)&lt;/em&gt;, &lt;em&gt;knitr(v.1.42)&lt;/em&gt;,
+&lt;em&gt;rlang(v.1.1.1)&lt;/em&gt;, &lt;em&gt;xfun(v.0.39)&lt;/em&gt;,
+&lt;em&gt;generics(v.0.1.3)&lt;/em&gt;, &lt;em&gt;jsonlite(v.1.8.4)&lt;/em&gt;,
+&lt;em&gt;openssl(v.2.0.6)&lt;/em&gt;, &lt;em&gt;askpass(v.1.1)&lt;/em&gt;,
+&lt;em&gt;rprojroot(v.2.0.3)&lt;/em&gt;, &lt;em&gt;htmltools(v.0.5.5)&lt;/em&gt;,
+&lt;em&gt;sass(v.0.4.5)&lt;/em&gt;, &lt;em&gt;fansi(v.1.0.4)&lt;/em&gt;,
+&lt;em&gt;rmarkdown(v.2.21)&lt;/em&gt;, &lt;em&gt;pander(v.0.6.5)&lt;/em&gt;,
+&lt;em&gt;evaluate(v.0.20)&lt;/em&gt;, &lt;em&gt;jquerylib(v.0.1.4)&lt;/em&gt;,
+&lt;em&gt;distill(v.1.6)&lt;/em&gt;, &lt;em&gt;fontawesome(v.0.5.1)&lt;/em&gt;,
+&lt;em&gt;fastmap(v.1.1.1)&lt;/em&gt;, &lt;em&gt;yaml(v.2.3.7)&lt;/em&gt;,
+&lt;em&gt;bookdown(v.0.33)&lt;/em&gt;, &lt;em&gt;memoise(v.2.0.1)&lt;/em&gt;,
+&lt;em&gt;compiler(v.4.3.0)&lt;/em&gt;, &lt;em&gt;timechange(v.0.2.0)&lt;/em&gt;,
+&lt;em&gt;Rcpp(v.1.0.10)&lt;/em&gt;, &lt;em&gt;downlit(v.0.4.2)&lt;/em&gt;,
+&lt;em&gt;rstudioapi(v.0.15.0)&lt;/em&gt;, &lt;em&gt;digest(v.0.6.31)&lt;/em&gt;,
+&lt;em&gt;R6(v.2.5.1)&lt;/em&gt;, &lt;em&gt;bslib(v.0.4.2)&lt;/em&gt;, &lt;em&gt;tools(v.4.3.0)&lt;/em&gt;,
+&lt;em&gt;withr(v.2.5.0)&lt;/em&gt;, &lt;em&gt;lubridate(v.1.9.2)&lt;/em&gt;,
+&lt;em&gt;xml2(v.1.3.4)&lt;/em&gt; and &lt;em&gt;cachem(v.1.0.7)&lt;/em&gt;&lt;/p&gt;
+&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+      <distill:md5>68f6a6d8466e1c59e50da61251a59a50</distill:md5>
+      <guid>https://awalsh17.github.io/posts/2024-04-26-what-i-am-reading-q1-2024</guid>
+      <pubDate>Fri, 26 Apr 2024 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Improving Your Job Search</title>
       <dc:creator>Alice Walsh</dc:creator>
@@ -114,19 +208,22 @@ en_US.UTF-8||en_US.UTF-8||en_US.UTF-8||C||en_US.UTF-8||en_US.UTF-8&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;loaded via a namespace (and not attached):&lt;/strong&gt;
 &lt;em&gt;vctrs(v.0.6.4)&lt;/em&gt;, &lt;em&gt;cli(v.3.6.1)&lt;/em&gt;, &lt;em&gt;knitr(v.1.42)&lt;/em&gt;,
 &lt;em&gt;rlang(v.1.1.1)&lt;/em&gt;, &lt;em&gt;xfun(v.0.39)&lt;/em&gt;,
-&lt;em&gt;generics(v.0.1.3)&lt;/em&gt;, &lt;em&gt;jsonlite(v.1.8.4)&lt;/em&gt;,
+&lt;em&gt;stringi(v.1.7.12)&lt;/em&gt;, &lt;em&gt;generics(v.0.1.3)&lt;/em&gt;,
+&lt;em&gt;jsonlite(v.1.8.4)&lt;/em&gt;, &lt;em&gt;glue(v.1.6.2)&lt;/em&gt;,
 &lt;em&gt;openssl(v.2.0.6)&lt;/em&gt;, &lt;em&gt;askpass(v.1.1)&lt;/em&gt;,
 &lt;em&gt;rprojroot(v.2.0.3)&lt;/em&gt;, &lt;em&gt;htmltools(v.0.5.5)&lt;/em&gt;,
 &lt;em&gt;sass(v.0.4.5)&lt;/em&gt;, &lt;em&gt;fansi(v.1.0.4)&lt;/em&gt;,
 &lt;em&gt;rmarkdown(v.2.21)&lt;/em&gt;, &lt;em&gt;pander(v.0.6.5)&lt;/em&gt;,
 &lt;em&gt;evaluate(v.0.20)&lt;/em&gt;, &lt;em&gt;jquerylib(v.0.1.4)&lt;/em&gt;,
 &lt;em&gt;distill(v.1.6)&lt;/em&gt;, &lt;em&gt;fontawesome(v.0.5.1)&lt;/em&gt;,
-&lt;em&gt;fastmap(v.1.1.1)&lt;/em&gt;, &lt;em&gt;yaml(v.2.3.7)&lt;/em&gt;,
-&lt;em&gt;bookdown(v.0.33)&lt;/em&gt;, &lt;em&gt;memoise(v.2.0.1)&lt;/em&gt;,
+&lt;em&gt;fastmap(v.1.1.1)&lt;/em&gt;, &lt;em&gt;lifecycle(v.1.0.3)&lt;/em&gt;,
+&lt;em&gt;yaml(v.2.3.7)&lt;/em&gt;, &lt;em&gt;bookdown(v.0.33)&lt;/em&gt;,
+&lt;em&gt;memoise(v.2.0.1)&lt;/em&gt;, &lt;em&gt;stringr(v.1.5.0)&lt;/em&gt;,
 &lt;em&gt;compiler(v.4.3.0)&lt;/em&gt;, &lt;em&gt;timechange(v.0.2.0)&lt;/em&gt;,
 &lt;em&gt;Rcpp(v.1.0.10)&lt;/em&gt;, &lt;em&gt;downlit(v.0.4.2)&lt;/em&gt;,
 &lt;em&gt;rstudioapi(v.0.15.0)&lt;/em&gt;, &lt;em&gt;digest(v.0.6.31)&lt;/em&gt;,
-&lt;em&gt;R6(v.2.5.1)&lt;/em&gt;, &lt;em&gt;bslib(v.0.4.2)&lt;/em&gt;, &lt;em&gt;tools(v.4.3.0)&lt;/em&gt;,
+&lt;em&gt;R6(v.2.5.1)&lt;/em&gt;, &lt;em&gt;magrittr(v.2.0.3)&lt;/em&gt;,
+&lt;em&gt;bslib(v.0.4.2)&lt;/em&gt;, &lt;em&gt;tools(v.4.3.0)&lt;/em&gt;,
 &lt;em&gt;withr(v.2.5.0)&lt;/em&gt;, &lt;em&gt;lubridate(v.1.9.2)&lt;/em&gt;,
 &lt;em&gt;xml2(v.1.3.4)&lt;/em&gt; and &lt;em&gt;cachem(v.1.0.7)&lt;/em&gt;&lt;/p&gt;
 &lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>

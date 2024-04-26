@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2024-04-26-what-i-am-reading-q1-2024/",
+    "title": "What I am reading: Q1 2024",
+    "description": "There is too much content out there.",
+    "author": [
+      {
+        "name": "Alice Walsh",
+        "url": {}
+      }
+    ],
+    "date": "2024-04-26",
+    "categories": [],
+    "contents": "\nKeeping up with biotech, tech, and techbio is exhausting. It seems like every other person has a substack.\nHere are articles or newsletters that have gone around in Q1 2024 that I have found valuable. I would love some new recommendations!\nGeneral newsletters or blogs:\nBitsinbio newsletter: https://bitsinbio.substack.com/\nAbigail Haddad’s substack on LLMs: https://presentofcoding.substack.com/\nVicki Boykis is always a good read: https://vickiboykis.com/\nDecoding bio is from a group of investors: https://www.decodingbio.com/\nWaseem Daher, startup real talk: https://waseem.substack.com/\nSingle posts or articles that were interesting:\nSelling AI Products and Services to Big Pharma (Brandon White)\nRules of ML (Martin Zinkevich):\nProblem choice and decision trees in science and engineering (note: the right questions are the hard - part, not the right solutions)\nAn Incomplete History of Selventa and the Biological Expression Language (BEL) (Charles Tapley - Hoyt)\nI don’t know how I found this, but I remember Selventa, and this is fascinating.\n\nSome questions about biotech that I find interesting (Alex Telford)\nA deep profile of gene expression across 18 human cancers (Wei Qiu et al.)\nI like latent variables\n\nNo installation required: how WebAssembly is changing scientific computing (By Jeffrey M. Perkel)\nsessionInfo\n\n\npander::pander(sessionInfo())\n\nR version 4.3.0 (2023-04-21)\nPlatform: aarch64-apple-darwin20 (64-bit)\nlocale:\nen_US.UTF-8||en_US.UTF-8||en_US.UTF-8||C||en_US.UTF-8||en_US.UTF-8\nattached base packages:\nstats, graphics, grDevices, utils, datasets, methods and base\nloaded via a namespace (and not attached):\ndigest(v.0.6.31), R6(v.2.5.1), fastmap(v.1.1.1), xfun(v.0.39), cachem(v.1.0.7), knitr(v.1.42), distill(v.1.6), memoise(v.2.0.1), htmltools(v.0.5.5), rmarkdown(v.2.21), cli(v.3.6.1), pander(v.0.6.5), downlit(v.0.4.2), sass(v.0.4.5), jquerylib(v.0.1.4), withr(v.2.5.0), compiler(v.4.3.0), rstudioapi(v.0.15.0), tools(v.4.3.0), bslib(v.0.4.2), evaluate(v.0.20), Rcpp(v.1.0.10), yaml(v.2.3.7), jsonlite(v.1.8.4) and rlang(v.1.1.1)\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2024-04-26T09:59:28-04:00",
+    "input_file": "what-i-am-reading-q1-2024.knit.md"
+  },
+  {
     "path": "posts/2024-03-26-improving-your-job-search/",
     "title": "Improving Your Job Search",
     "description": "My common advice for people looking for comp bio jobs.",

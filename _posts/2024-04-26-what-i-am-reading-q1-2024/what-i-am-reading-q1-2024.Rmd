@@ -1,0 +1,43 @@
+---
+title: "What I am reading: Q1 2024"
+description: |
+  There is too much content out there.
+author:
+  - name: Alice Walsh
+    url: {}
+date: 2024-04-26
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Keeping up with biotech, tech, and techbio is exhausting. It seems like every other person has a substack. 
+
+Here are articles or newsletters that have gone around in Q1 2024 that I have found valuable. I would love some new recommendations!
+
+### General newsletters or blogs:
+
+- Bitsinbio newsletter: https://bitsinbio.substack.com/ 
+- Abigail Haddad's substack on LLMs: https://presentofcoding.substack.com/
+- Vicki Boykis is always a good read: https://vickiboykis.com/
+- Decoding bio is from a group of investors: https://www.decodingbio.com/
+- Waseem Daher, startup real talk: https://waseem.substack.com/
+
+### Single posts or articles that were interesting:
+
+- [Selling AI Products and Services to Big Pharma](https://www.aibiodesign.com/p/selling-ai-products-services-to-big) (Brandon White) 
+- [Rules of ML](https://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf) (Martin Zinkevich): 
+- [Problem choice and decision trees in science and engineering](https://www.cell.com/cell/fulltext/S0092-8674(24)00304-0) (note: the right questions are the hard - part, not the right solutions)
+- [An Incomplete History of Selventa and the Biological Expression Language (BEL)](https://cthoyt.com/2020/04/28/history-of-bel.html) (Charles Tapley - Hoyt)
+  - I don't know how I found this, but I remember Selventa, and this is fascinating.
+- [Some questions about biotech that I find interesting](https://atelfo.github.io/2024/04/01/biotech-questions.html) (Alex Telford)
+- [A deep profile of gene expression across 18 human cancers](https://www.biorxiv.org/content/10.1101/2024.03.17.585426v1.full) (Wei Qiu et al.)
+  - I like latent variables
+- [No installation required: how WebAssembly is changing scientific computing](https://www.nature.com/articles/d41586-024-00725-1) (By Jeffrey M. Perkel)
+
+
+### sessionInfo {.appendix}
+
+```{r}
+pander::pander(sessionInfo())
+```
