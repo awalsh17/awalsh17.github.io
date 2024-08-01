@@ -7,7 +7,73 @@
     <description>Alice Walsh's personal website
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 26 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>What I am reading: Q2 2024</title>
+      <dc:creator>Alice Walsh</dc:creator>
+      <link>https://awalsh17.github.io/posts/2024-08-01-what-i-am-reading-q2-2024</link>
+      <description>
+
+
+&lt;p&gt;Here are articles or newsletters that have gone around in Q2 2024
+that I have read or found interesting. But, I would love some new
+recommendations!&lt;/p&gt;
+&lt;p&gt;See my previous post for more general newsletters that I follow.&lt;/p&gt;
+&lt;h3 id="single-posts-or-articles-that-were-interesting"&gt;Single posts or
+articles that were interesting:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+href="https://www.linkedin.com/blog/engineering/generative-ai/musings-on-building-a-generative-ai-product"&gt;Musings
+on Building a Generative AI Product&lt;/a&gt; (LinkedIn)&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://www.futurehouse.org/articles/lab-bench-measuring-capabilities-of-language-models-for-biology-research"&gt;LAB-Bench:
+Measuring Capabilities of Language Models for Biology Research&lt;/a&gt;
+(FutureHouse)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://arxiv.org/abs/2310.03714"&gt;DSPy: Compiling
+Declarative Language Model Calls into Self-Improving Pipelines&lt;/a&gt;
+(preprint)&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://www.biorxiv.org/content/10.1101/2023.10.16.561085v1"&gt;Assessing
+the limits of zero-shot foundation models in single-cell biology&lt;/a&gt;
+(preprint)&lt;/li&gt;
+&lt;li&gt;&lt;a
+href="https://x.com/aarondfrancis/status/1801995990834065631?s=46&amp;amp;t=97ESfi2JgyhASUJpGab9wA"&gt;What
+are the best long form lectures on YT?&lt;/a&gt; (X/twitter thread)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.nature.com/articles/s41586-024-07566-y"&gt;AI
+models collapse when trained on recursively generated data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="appendix" id="sessioninfo"&gt;sessionInfo&lt;/h3&gt;
+&lt;pre class="r"&gt;&lt;code&gt;pander::pander(sessionInfo())&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;R version 4.3.0 (2023-04-21)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Platform:&lt;/strong&gt; aarch64-apple-darwin20 (64-bit)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;locale:&lt;/strong&gt;
+en_US.UTF-8||en_US.UTF-8||en_US.UTF-8||C||en_US.UTF-8||en_US.UTF-8&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;attached base packages:&lt;/strong&gt; &lt;em&gt;stats&lt;/em&gt;,
+&lt;em&gt;graphics&lt;/em&gt;, &lt;em&gt;grDevices&lt;/em&gt;, &lt;em&gt;utils&lt;/em&gt;,
+&lt;em&gt;datasets&lt;/em&gt;, &lt;em&gt;methods&lt;/em&gt; and &lt;em&gt;base&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;loaded via a namespace (and not attached):&lt;/strong&gt;
+&lt;em&gt;vctrs(v.0.6.4)&lt;/em&gt;, &lt;em&gt;cli(v.3.6.1)&lt;/em&gt;, &lt;em&gt;knitr(v.1.42)&lt;/em&gt;,
+&lt;em&gt;rlang(v.1.1.1)&lt;/em&gt;, &lt;em&gt;xfun(v.0.39)&lt;/em&gt;,
+&lt;em&gt;generics(v.0.1.3)&lt;/em&gt;, &lt;em&gt;jsonlite(v.1.8.4)&lt;/em&gt;,
+&lt;em&gt;openssl(v.2.0.6)&lt;/em&gt;, &lt;em&gt;askpass(v.1.1)&lt;/em&gt;,
+&lt;em&gt;rprojroot(v.2.0.3)&lt;/em&gt;, &lt;em&gt;htmltools(v.0.5.5)&lt;/em&gt;,
+&lt;em&gt;sass(v.0.4.5)&lt;/em&gt;, &lt;em&gt;fansi(v.1.0.4)&lt;/em&gt;,
+&lt;em&gt;rmarkdown(v.2.21)&lt;/em&gt;, &lt;em&gt;pander(v.0.6.5)&lt;/em&gt;,
+&lt;em&gt;evaluate(v.0.20)&lt;/em&gt;, &lt;em&gt;jquerylib(v.0.1.4)&lt;/em&gt;,
+&lt;em&gt;distill(v.1.6)&lt;/em&gt;, &lt;em&gt;fontawesome(v.0.5.1)&lt;/em&gt;,
+&lt;em&gt;fastmap(v.1.1.1)&lt;/em&gt;, &lt;em&gt;yaml(v.2.3.7)&lt;/em&gt;,
+&lt;em&gt;bookdown(v.0.33)&lt;/em&gt;, &lt;em&gt;memoise(v.2.0.1)&lt;/em&gt;,
+&lt;em&gt;compiler(v.4.3.0)&lt;/em&gt;, &lt;em&gt;timechange(v.0.2.0)&lt;/em&gt;,
+&lt;em&gt;Rcpp(v.1.0.10)&lt;/em&gt;, &lt;em&gt;downlit(v.0.4.2)&lt;/em&gt;,
+&lt;em&gt;rstudioapi(v.0.15.0)&lt;/em&gt;, &lt;em&gt;digest(v.0.6.31)&lt;/em&gt;,
+&lt;em&gt;R6(v.2.5.1)&lt;/em&gt;, &lt;em&gt;bslib(v.0.4.2)&lt;/em&gt;, &lt;em&gt;tools(v.4.3.0)&lt;/em&gt;,
+&lt;em&gt;withr(v.2.5.0)&lt;/em&gt;, &lt;em&gt;lubridate(v.1.9.2)&lt;/em&gt;,
+&lt;em&gt;xml2(v.1.3.4)&lt;/em&gt; and &lt;em&gt;cachem(v.1.0.7)&lt;/em&gt;&lt;/p&gt;
+&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+      <distill:md5>077dfbf5fed510a73a53ba5a54da91a7</distill:md5>
+      <guid>https://awalsh17.github.io/posts/2024-08-01-what-i-am-reading-q2-2024</guid>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>What I am reading: Q1 2024</title>
       <dc:creator>Alice Walsh</dc:creator>
@@ -82,19 +148,22 @@ en_US.UTF-8||en_US.UTF-8||en_US.UTF-8||C||en_US.UTF-8||en_US.UTF-8&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;loaded via a namespace (and not attached):&lt;/strong&gt;
 &lt;em&gt;vctrs(v.0.6.4)&lt;/em&gt;, &lt;em&gt;cli(v.3.6.1)&lt;/em&gt;, &lt;em&gt;knitr(v.1.42)&lt;/em&gt;,
 &lt;em&gt;rlang(v.1.1.1)&lt;/em&gt;, &lt;em&gt;xfun(v.0.39)&lt;/em&gt;,
-&lt;em&gt;generics(v.0.1.3)&lt;/em&gt;, &lt;em&gt;jsonlite(v.1.8.4)&lt;/em&gt;,
+&lt;em&gt;stringi(v.1.7.12)&lt;/em&gt;, &lt;em&gt;generics(v.0.1.3)&lt;/em&gt;,
+&lt;em&gt;jsonlite(v.1.8.4)&lt;/em&gt;, &lt;em&gt;glue(v.1.6.2)&lt;/em&gt;,
 &lt;em&gt;openssl(v.2.0.6)&lt;/em&gt;, &lt;em&gt;askpass(v.1.1)&lt;/em&gt;,
 &lt;em&gt;rprojroot(v.2.0.3)&lt;/em&gt;, &lt;em&gt;htmltools(v.0.5.5)&lt;/em&gt;,
 &lt;em&gt;sass(v.0.4.5)&lt;/em&gt;, &lt;em&gt;fansi(v.1.0.4)&lt;/em&gt;,
 &lt;em&gt;rmarkdown(v.2.21)&lt;/em&gt;, &lt;em&gt;pander(v.0.6.5)&lt;/em&gt;,
 &lt;em&gt;evaluate(v.0.20)&lt;/em&gt;, &lt;em&gt;jquerylib(v.0.1.4)&lt;/em&gt;,
 &lt;em&gt;distill(v.1.6)&lt;/em&gt;, &lt;em&gt;fontawesome(v.0.5.1)&lt;/em&gt;,
-&lt;em&gt;fastmap(v.1.1.1)&lt;/em&gt;, &lt;em&gt;yaml(v.2.3.7)&lt;/em&gt;,
-&lt;em&gt;bookdown(v.0.33)&lt;/em&gt;, &lt;em&gt;memoise(v.2.0.1)&lt;/em&gt;,
+&lt;em&gt;fastmap(v.1.1.1)&lt;/em&gt;, &lt;em&gt;lifecycle(v.1.0.3)&lt;/em&gt;,
+&lt;em&gt;yaml(v.2.3.7)&lt;/em&gt;, &lt;em&gt;bookdown(v.0.33)&lt;/em&gt;,
+&lt;em&gt;memoise(v.2.0.1)&lt;/em&gt;, &lt;em&gt;stringr(v.1.5.0)&lt;/em&gt;,
 &lt;em&gt;compiler(v.4.3.0)&lt;/em&gt;, &lt;em&gt;timechange(v.0.2.0)&lt;/em&gt;,
 &lt;em&gt;Rcpp(v.1.0.10)&lt;/em&gt;, &lt;em&gt;downlit(v.0.4.2)&lt;/em&gt;,
 &lt;em&gt;rstudioapi(v.0.15.0)&lt;/em&gt;, &lt;em&gt;digest(v.0.6.31)&lt;/em&gt;,
-&lt;em&gt;R6(v.2.5.1)&lt;/em&gt;, &lt;em&gt;bslib(v.0.4.2)&lt;/em&gt;, &lt;em&gt;tools(v.4.3.0)&lt;/em&gt;,
+&lt;em&gt;R6(v.2.5.1)&lt;/em&gt;, &lt;em&gt;magrittr(v.2.0.3)&lt;/em&gt;,
+&lt;em&gt;bslib(v.0.4.2)&lt;/em&gt;, &lt;em&gt;tools(v.4.3.0)&lt;/em&gt;,
 &lt;em&gt;withr(v.2.5.0)&lt;/em&gt;, &lt;em&gt;lubridate(v.1.9.2)&lt;/em&gt;,
 &lt;em&gt;xml2(v.1.3.4)&lt;/em&gt; and &lt;em&gt;cachem(v.1.0.7)&lt;/em&gt;&lt;/p&gt;
 &lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>

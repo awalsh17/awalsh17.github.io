@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2024-08-01-what-i-am-reading-q2-2024/",
+    "title": "What I am reading: Q2 2024",
+    "description": "Summer reading.",
+    "author": [
+      {
+        "name": "Alice Walsh",
+        "url": {}
+      }
+    ],
+    "date": "2024-08-01",
+    "categories": [],
+    "contents": "\nHere are articles or newsletters that have gone around in Q2 2024 that I have read or found interesting. But, I would love some new recommendations!\nSee my previous post for more general newsletters that I follow.\nSingle posts or articles that were interesting:\nMusings on Building a Generative AI Product (LinkedIn)\nLAB-Bench: Measuring Capabilities of Language Models for Biology Research (FutureHouse)\nDSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines (preprint)\nAssessing the limits of zero-shot foundation models in single-cell biology (preprint)\nWhat are the best long form lectures on YT? (X/twitter thread)\nAI models collapse when trained on recursively generated data\nsessionInfo\n\n\npander::pander(sessionInfo())\n\nR version 4.3.0 (2023-04-21)\nPlatform: aarch64-apple-darwin20 (64-bit)\nlocale:\nen_US.UTF-8||en_US.UTF-8||en_US.UTF-8||C||en_US.UTF-8||en_US.UTF-8\nattached base packages:\nstats, graphics, grDevices, utils, datasets, methods and base\nloaded via a namespace (and not attached):\ndigest(v.0.6.31), R6(v.2.5.1), fastmap(v.1.1.1), xfun(v.0.39), cachem(v.1.0.7), knitr(v.1.42), distill(v.1.6), memoise(v.2.0.1), htmltools(v.0.5.5), rmarkdown(v.2.21), cli(v.3.6.1), pander(v.0.6.5), downlit(v.0.4.2), sass(v.0.4.5), jquerylib(v.0.1.4), withr(v.2.5.0), compiler(v.4.3.0), rstudioapi(v.0.15.0), tools(v.4.3.0), bslib(v.0.4.2), evaluate(v.0.20), Rcpp(v.1.0.10), yaml(v.2.3.7), jsonlite(v.1.8.4) and rlang(v.1.1.1)\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2024-08-01T12:28:30-04:00",
+    "input_file": "what-i-am-reading-q2-2024.knit.md"
+  },
+  {
     "path": "posts/2024-04-26-what-i-am-reading-q1-2024/",
     "title": "What I am reading: Q1 2024",
     "description": "There is too much content out there.",

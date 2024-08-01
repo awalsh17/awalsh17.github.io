@@ -1,0 +1,32 @@
+---
+title: "What I am reading: Q2 2024"
+description: |
+  Summer reading.
+author:
+  - name: Alice Walsh
+    url: {}
+date: 2024-08-01
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Here are articles or newsletters that have gone around in Q2 2024 that I have read or found interesting. I have had much less time for reading lately, but I would love some new recommendations!
+
+See my previous post for more general newsletters that I follow.
+
+### Single posts or articles that were interesting:
+
+- [Musings on Building a Generative AI Product](https://www.linkedin.com/blog/engineering/generative-ai/musings-on-building-a-generative-ai-product) (LinkedIn) 
+- [LAB-Bench: Measuring Capabilities of Language Models for Biology Research](https://www.futurehouse.org/articles/lab-bench-measuring-capabilities-of-language-models-for-biology-research) (FutureHouse)
+- [DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) (preprint)
+- [Assessing the limits of zero-shot foundation models in single-cell biology](https://www.biorxiv.org/content/10.1101/2023.10.16.561085v1) (preprint)
+- [What are the best long form lectures on YT?](https://x.com/aarondfrancis/status/1801995990834065631?s=46&t=97ESfi2JgyhASUJpGab9wA) (X/twitter thread)
+- [AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y)
+
+### sessionInfo {.appendix}
+
+```{r}
+pander::pander(sessionInfo())
+```
+
