@@ -4,22 +4,22 @@
       "path": "about.html",
       "title": "About me",
       "author": [],
-      "contents": "\n\n\n\nI am a computational biologist/data scientist/bioinformatician/bioengineer that enjoys learning from complex biological data sets and collaborating. (My pronouns are she/her.)\nI am currently VP of Translational Research at Pathos. My prior professional experience includes roles at Bristol Myers Squibb and Janssen. My projects are broadly at the intersection of molecular data and drug development, including leading teams that have worked on all stages of drug development, from target identification through approval. Google Scholar page.\nI am also a founding organizer of the Philadelphia chapter of R-Ladies.\nI live in the Philadelphia area. I spend my free time watching television and improving my artistic skills through painting, quilting, needlepoint, and other creative pursuits.\nYou can find me online on Twitter, LinkedIn, and GitHub.\n\n\n\n",
-      "last_modified": "2024-03-26T07:49:32-04:00"
+      "contents": "\n\n\n\nI am a computational biologist/data scientist/bioinformatician/bioengineer who enjoys learning from complex biological data sets and collaborating. (My pronouns are she/her.)\nI am currently the Chief Operating Officer at Synthesize Bio My prior professional experience includes roles at Pathos, Bristol Myers Squibb, and Janssen (Johnson & Johnson). My work sits at the intersection of machine learning, molecular data, and drug development. I have led teams across all stages of drug development, from target identification through approval. Google Scholar page.\nI was a founding organizer of the Philadelphia chapter of R-Ladies.\nI live in the Philadelphia area. I spend my free time watching television and improving my artistic skills through painting, quilting, and other creative pursuits.\nYou can find me online on LinkedIn and GitHub.\n\n\n\n",
+      "last_modified": "2025-10-28T09:35:47-04:00"
     },
     {
       "path": "index.html",
       "title": "Alice Walsh, PhD",
       "author": [],
       "contents": "\nWelcome! 👋\nI work in drug development, where I am excited about the potential of computational research to yield breakthroughs for patients. This is my personal site where I am experimenting with posting various things that normally stay in my notes app.\nMore about me\n\n\n\n",
-      "last_modified": "2024-03-26T07:49:32-04:00"
+      "last_modified": "2025-10-28T09:35:47-04:00"
     },
     {
       "path": "posts.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2024-03-26T07:49:33-04:00"
+      "last_modified": "2025-10-28T09:35:48-04:00"
     }
   ],
   "collections": ["posts/posts.json"]
